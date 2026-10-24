@@ -1,0 +1,23 @@
+{
+  "name": "@ward-shift-planner/engine",
+  "version": "0.1.0",
+  "description": "Roster engine (rules, validator, solver) and entitlement rules for Ward Shift Planner",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "legacy": "node scripts/extract-legacy.mjs ../prototype/index.html test/fixtures/legacy-engine.cjs",
+    "test": "node --test test/*.test.ts",
+    "prototype-data": "node scripts/build-prototype-data.mjs ../prototype/hospitals-data.js"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=22.18"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0 || ^6.0.0"
+  }
+}

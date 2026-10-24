@@ -1,0 +1,914 @@
+<!doctype html><html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="ระบบจัดตารางเวร RN อายุรกรรมชาย C7 พร้อม VA วันหยุดต่อเนื่อง และตรวจเงื่อนไข"><title>C7 RN · ตารางเวรพยาบาล</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123d4b'/%3E%3Cpath d='M26 12h12v14h14v12H38v14H26V38H12V26h14z' fill='%2347c8b9'/%3E%3C/svg%3E"><style>@font-face{font-family:'Ward Thai';font-style:normal;font-weight:400;src:url(data:font/woff2;base64,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) format('woff2');font-display:swap;}@font-face{font-family:'Ward Thai';font-style:normal;font-weight:700;src:url(data:font/woff2;base64,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) format('woff2');font-display:swap;}:root{--ink:#162b39;--muted:#657680;--teal:#087d78;--dark:#123d4b;--line:#dae4e8;--bg:#f1f5f7;--red:#b42332;--amber:#9a5b0b;--radius:12px}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.6 'Ward Thai',Tahoma,'Leelawadee UI',sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{outline-offset:3px}button{cursor:pointer;border:1px solid var(--line);border-radius:8px;background:white;padding:9px 15px;color:var(--ink)}button:hover{border-color:var(--teal);background:#effaf8}button:disabled{opacity:.5;cursor:wait}button.primary{background:var(--teal);color:white;border-color:var(--teal);font-weight:bold}.danger{color:var(--red)}input,select,textarea{border:1px solid #c8d6dd;background:white;border-radius:7px;padding:8px 10px;color:var(--ink);max-width:100%}input[type=checkbox]{width:18px;height:18px;vertical-align:middle;accent-color:var(--teal)}input[type=color]{padding:2px;width:42px;height:36px}label{display:flex;flex-direction:column;gap:5px;font-size:14px;color:#435c68}label.check{flex-direction:row;align-items:center}a{color:var(--teal)}.topbar{background:var(--dark);color:white;display:flex;align-items:center;justify-content:space-between;padding:17px 28px;gap:18px}.brand{display:flex;gap:12px;align-items:center}.logo{width:42px;height:42px;background:#47c8b9;color:var(--dark);border-radius:11px;display:grid;place-items:center;font-size:19px;font-weight:bold}.brand strong{display:block;font-size:18px;letter-spacing:.4px}.brand small{color:#b9d8df;font-size:12px}.save-state{color:#cce7eb;font-size:13px}.top-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.top-actions button{background:#255463;color:white;border-color:#4a6b76}.page{padding:25px 28px 40px;max-width:1900px;margin:auto}.titlebar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:18px}h1{font-size:26px;margin:0;font-weight:700}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px}.muted{color:var(--muted);font-size:14px}.titlebar p{margin:3px 0 0}.versions{display:flex;background:white;border:1px solid var(--line);border-radius:10px;padding:4px;gap:4px}.versions a{text-decoration:none;color:var(--muted);font-size:14px;padding:8px 14px;border-radius:7px}.versions a.active{color:white;background:var(--dark)}.toolbar{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;align-items:flex-end;flex-wrap:wrap;gap:14px}.grow{flex:1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0}.stat{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:13px 18px;border-top:3px solid #98b5c0}.stat:nth-child(2){border-top-color:#168f84}.stat:nth-child(3){border-top-color:#5a89c7}.stat:nth-child(4){border-top-color:#deae55}.stat .label{font-size:13px;color:var(--muted)}.stat strong{font-size:27px;margin-right:7px}.stat small{color:var(--muted)}.tabs{display:flex;flex-wrap:wrap;gap:5px;margin:18px 0 0;border-bottom:1px solid var(--line)}.tabs button{border:0;background:transparent;border-radius:0;padding:12px 17px;color:var(--muted);font-size:14px}.tabs button.active{color:var(--teal);border-bottom:3px solid var(--teal);font-weight:bold}.panel{background:white;border:1px solid var(--line);border-top:0;border-radius:0 0 var(--radius) var(--radius);padding:20px}.hidden{display:none!important}.notice{padding:12px 16px;border:1px solid #c5ddd9;border-left:4px solid var(--teal);border-radius:8px;background:#edf8f6;font-size:14px;margin:14px 0}.notice.warn{background:#fff9e9;border-color:#f0d79e;border-left-color:#d38a20}.notice.error{background:#fff2f3;border-color:#e8b9bf;border-left-color:var(--red)}.notice strong{margin-right:6px}.tablebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:13px;font-size:14px}.legend{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill{font-size:12px;border-radius:5px;background:#eef2f6;color:#425a67;padding:3px 8px;white-space:nowrap}.stroke{color:#176b61;background:#def4ed}.table-scroll{overflow:auto;max-height:650px;border:1px solid var(--line);border-radius:8px}.roster{border-collapse:separate;border-spacing:0;min-width:100%;font-size:13px;line-height:1.5}.roster th,.roster td{border-right:1px solid #e1e8ec;border-bottom:1px solid #e1e8ec;text-align:center;padding:0;min-width:43px;height:48px;background:white}.roster th{background:#eef4f7;color:#425c69;position:sticky;top:0;z-index:3;padding:7px 3px;font-weight:normal;font-size:12px}.roster .name{position:sticky;left:0;min-width:230px;width:230px;max-width:230px;background:white;z-index:2;text-align:left;padding:8px 12px;white-space:nowrap}.roster th.name{z-index:5;background:#eef4f7;font-weight:bold}.roster .name .rn-name{font-size:13px;display:block}.roster .name .tag{font-size:10px;letter-spacing:.2px;color:var(--teal)}.roster .name .index{color:#93a3ac;font-size:11px;margin-right:6px}.roster th.weekend{background:#e6edf1}.roster th.holiday{color:#9d5714;background:#fff0cf}.roster th.problem-day{background:#fee1e5;color:var(--red);font-weight:bold}.roster td.problem-cell{box-shadow:inset 0 0 0 1px #e2838d}.cell{border:0;background:transparent!important;border-radius:0;width:100%;height:48px;padding:0 2px;font-size:13px;font-weight:bold;position:relative;color:inherit;min-width:41px}.cell:hover{outline:2px solid var(--teal);outline-offset:-2px}.cell.ch{color:#086b69}.cell.bai{color:#996109}.cell.night{color:#4863a8}.cell.off{color:#80939b;font-weight:normal;font-size:11px}.cell.va{color:#92528d;background:#f8edf8!important}.cell.bad{color:var(--red)!important}.cell .dot{position:absolute;right:2px;top:0;font-size:9px}.cell .lock{position:absolute;left:2px;bottom:0;font-size:9px;color:#6c7f88}.roster .sum{background:#f4f8fa;font-weight:bold;min-width:51px}.roster tfoot td{height:31px;background:#f2f7f9;font-size:12px}.roster tfoot .name{background:#e9f1f5;font-weight:bold}.bad-number{background:#ffedf0!important;color:var(--red)!important;font-weight:bold}.good-number{color:#0b776e}.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}.full{grid-column:1/-1}.plain-table{border-collapse:collapse;width:100%;font-size:14px}.plain-table th,.plain-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}.plain-table th{background:#f1f6f8;font-size:13px;color:#506974}.plain-table button{font-size:13px;padding:5px 9px}.row-actions{display:flex;gap:6px;flex-wrap:wrap}.datawrap{overflow:auto}.section-gap{margin-top:22px}.status-good{color:#087b69}.status-bad{color:var(--red)}.status-warn{color:var(--amber)}.issues{margin:0;padding-left:25px;max-height:320px;overflow:auto;font-size:14px}.issues li{padding:4px 0}.issues button{border:0;padding:0;text-align:left;font-size:14px;color:var(--red);background:transparent}.progress{display:flex;gap:12px;align-items:center}.progress progress{flex:1;accent-color:var(--teal)}.modal{border:0;border-radius:15px;box-shadow:0 20px 90px #0d2f4955;padding:26px;max-width:620px;width:calc(100% - 32px);color:var(--ink)}.modal::backdrop{background:#102f4960}.modal header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}.modal h2{margin:0}.modal footer{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}.modal .choices{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.choices button.selected{background:#d9f3ef;border-color:var(--teal);color:var(--teal);font-weight:bold}.modal textarea{width:100%;min-height:80px}.colors{display:flex;gap:8px;flex-wrap:wrap}.colors button{width:34px;height:34px;padding:0;border-radius:50%}.colors button.selected{outline:3px solid var(--teal);outline-offset:2px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dark);color:white;border-radius:9px;padding:12px 22px;z-index:30;max-width:90%;font-size:14px}.subtle-button{padding:6px 10px;font-size:13px}.help{font-size:14px;color:#506570}.help p{margin:8px 0}.help ul{padding-left:23px}.switcher{display:flex;align-items:center;gap:10px}.history-select{min-width:72px}.print-only{display:none}.version2-strip{background:#e8f1ff;border:1px solid #c4d7f1;border-left:4px solid #507bae}.year-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.year-card{border:1px solid var(--line);border-radius:8px;padding:9px;font-size:12px}.year-card strong{font-size:20px;display:block}.calendar-settings{display:grid;grid-template-columns:1fr 1fr;gap:25px}.calendar-month{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.calendar-month button{font-size:13px;padding:8px 3px}.calendar-month button.nonwork{background:#fff4de;color:#8d5a20}.footnote{margin-top:13px;font-size:12px;color:var(--muted)}@media(max-width:900px){.topbar{padding:12px 16px}.page{padding:18px 14px}.titlebar{align-items:flex-start;flex-direction:column;gap:12px}h1{font-size:23px}.stats{grid-template-columns:repeat(2,1fr)}.form-grid,.two-col,.calendar-settings{grid-template-columns:1fr}.panel{padding:14px}.roster .name{min-width:185px;width:185px;max-width:185px}.roster .name .rn-name{font-size:12px}.save-state{display:none}.year-grid{grid-template-columns:repeat(3,1fr)}.tabs button{padding:10px;font-size:13px}.brand small{display:none}}@media print{@page{size:A3 landscape;margin:8mm}body{background:white;font-size:10px}.topbar,.toolbar,.tabs,.tablebar,.notice,.no-print,.titlebar .versions,.stats,.footnote,.toast{display:none!important}.page,.panel{margin:0;padding:0;border:0}.titlebar{margin:0 0 6px}h1{font-size:17px}.titlebar p{font-size:10px}.table-scroll{overflow:visible;max-height:none;border:0}.roster{width:100%;font-size:9px}.roster td,.roster th{min-width:0;height:24px;padding:0;position:static!important}.roster .name{min-width:145px;width:145px;max-width:145px}.roster .name .rn-name{font-size:9px}.cell{font-size:10px;height:26px;min-width:0}.roster .sum{min-width:0}.roster .name .tag{font-size:8px}.roster th{font-size:9px}.roster tfoot td{font-size:9px;height:20px}.print-only{display:block;font-size:10px;margin-top:8px}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.shift-dashboard{margin:16px 0;background:white;border:1px solid var(--line);border-radius:12px;padding:18px}.shift-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}.shift-card{padding:15px;border-radius:10px;border:1px solid var(--line);border-top:4px solid var(--teal);background:#f0faf8}.shift-card.evening{border-top-color:#c48a20;background:#fffaed}.shift-card.night{border-top-color:#587dc0;background:#f0f4fc}.shift-card strong{display:block;font-size:30px;line-height:1.4}.shift-card small{display:block;color:var(--muted)}.shift-dashboard summary{cursor:pointer;color:var(--teal);padding:8px 0}.shift-dashboard caption{text-align:left;color:var(--muted);padding:8px 0;font-size:13px}@media(max-width:540px){.shift-cards{gap:6px}.shift-card{padding:9px}.shift-card strong{font-size:25px}.shift-card small{font-size:11px}}@media print{.shift-dashboard{display:none!important}}
+@media print{#exportDialog{display:none!important}body.export-clean .roster td.problem-cell{box-shadow:none!important}body.export-clean .roster th.problem-day{background:#eef4f7!important;color:#425c69!important}body.export-clean .roster th.problem-day.weekend{background:#e6edf1!important}body.export-clean .roster th.problem-day.holiday{background:#fff0cf!important;color:#9d5714!important}body.export-clean .cell.bad{color:#4863a8!important}body.export-clean .cell.ch.bad{color:#086b69!important}body.export-clean .cell.bai.bad{color:#996109!important}body.export-clean .cell.off.bad{color:#80939b!important}body.export-clean .cell.va.bad{color:#92528d!important}body.export-clean .roster .bad-number{background:#f2f7f9!important;color:#425c69!important;font-weight:normal}}
+
+.roster .boundary-col{position:sticky;left:230px;min-width:100px;width:100px;max-width:100px;background:#eff8f6;z-index:2;padding:4px 6px;border-right:2px solid #b8d9d2}.roster th.boundary-col{z-index:4;background:#dff0eb;font-weight:bold}.boundary-button{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:3px 6px;font-size:11px;min-height:32px;border:1px dashed #b6cbc6;background:#fff}.boundary-button strong{font-size:14px}.boundary-button.has-value{border-style:solid;border-color:#7eb8a9;color:#08776e}.boundary-source{display:block;font-size:10px;color:#607970;white-space:nowrap}#boundaryDialog footer{flex-wrap:wrap}#boundaryShift{width:100%}.boundary-guide{margin:10px 0;font-size:13px;color:#506570}@media(max-width:900px){.roster .boundary-col{left:185px}}@media print{#boundaryDialog{display:none!important}.roster .boundary-col{width:35px;min-width:35px;max-width:35px;padding:0;position:static!important}.boundary-button{border:0;padding:0;min-height:0;background:transparent}.boundary-button strong{font-size:9px}.roster th.boundary-col{font-size:8px}}
+ .signature-block{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center;margin:32px 0 16px;font-size:14px}.signature-block p{margin:10px 0}.signature-block .sign-name{min-height:24px}@media(max-width:700px){.signature-block{grid-template-columns:1fr}}
+.mentor-options{width:100%;display:flex;align-items:end;gap:16px;flex-wrap:wrap;padding:15px;background:#e6f2f0;border-radius:10px}.mentor-options .help{flex-basis:100%;margin:0}.level-select{min-width:190px}.mentor-select{min-width:200px}.staff-badge{font-size:12px;padding:3px 8px;border-radius:5px;background:#e9f1f7;color:#123d4b}#peopleList th{white-space:nowrap}#peopleList td{vertical-align:middle}#mentorReport{max-height:340px;overflow:auto}#staffingForm{align-items:end}#staffingForm>label input[type=number]{width:105px!important}@media(max-width:700px){.mentor-options>label{width:100%}}
+.roster td.shortage-cell{background:#ffe1e5!important;color:#a11225!important;font-weight:bold;box-shadow:inset 0 0 0 1px #e2838d}</style><!-- Embedded Noto Sans Thai font: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thai)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+—————————————————————————————-
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+—————————————————————————————-
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting — in part or in whole — any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+ -->
+</head><body><header class="topbar"><div class="brand"><div class="logo">RN</div><div><strong>WARD · SHIFT PLANNER</strong><small id="brandWard">จัดตารางเวรพยาบาลวิชาชีพ</small></div></div><div class="top-actions"><span id="accountLabel">Guest</span><button id="accountBtn">Login</button><span class="save-state" id="saveState">พร้อมใช้งาน</span><button id="saveBtn">บันทึกข้อมูล</button><button id="backupBtn">สำรองไฟล์</button><button id="mockDownloadBtn">ดาวน์โหลด mock data</button><button id="mockRestoreBtn">โหลด mock data</button></div></header>
+<main class="page"><div class="titlebar"><div><h1 id="pageTitle">ตารางเวร RN</h1><p class="muted" id="wardSubtitle">หอผู้ป่วยในพิเศษรวมอายุรกรรมชาย C7 หน้า</p></div><nav class="versions" aria-label="รุ่นตาราง"><a href="#v1" id="v1Link">01 ตารางปกติ</a><a href="#v2" id="v2Link">02 หยุดต่อเนื่อง</a></nav></div>
+<div class="toolbar"><label>เดือน<select id="month"></select></label><label>ปี พ.ศ.<select id="year"><option value="2026">2569</option><option value="2027">2570</option></select></label><div class="grow"></div><span class="muted" id="nightBadge">ดึกโย้หลัง · 8 ชั่วโมง / เวร</span><button id="settingsQuick">ตั้งค่าเงื่อนไข</button><button class="primary" id="generateBtn">✦ สร้างตารางเวร</button><button id="clearBtn" class="danger">Clear ตารางเวร</button><button id="clearAllBtn" class="danger">ล้างตารางเวรทั้งหมด</button><button id="cancelBtn" class="hidden">หยุดค้นหา</button></div>
+<div id="progressBox" class="notice progress hidden"><span id="progressText">กำลังคำนวณ</span><progress id="progress" max="100" value="0"></progress></div><div id="messageBox" class="hidden" role="status"></div>
+<div class="notice no-print"><h2>ตั้งค่าอัตรากำลังวอร์ด</h2><p class="help">หากจัดไม่ครบ: “ขาด … คน” คือจำนวนตำแหน่งเวรที่ยังว่างด้านล่างตาราง ส่วน OFF ในแถวบุคลากรหมายถึงไม่ได้ขึ้นเวร ไม่ใช่ตำแหน่งที่ขาด</p><p class="help">เลือกตัวเลือกแล้วกด “บันทึกชื่อวอร์ด / ใช้เงื่อนไข” • ใช้กับวอร์ดปัจจุบันทุกเดือน (ยังไม่แยกฐานข้อมูลหลายวอร์ดพร้อมกัน) • Senior และ Competent เป็นคนละระดับ ขั้นต่ำรวมต้องไม่เกิน RN รวม • Stroke เป็นทักษะเพิ่มเติม • เมื่อเปิดแยก Novice จะไม่นับในกำลังหลัก • การบังคับพี่เลี้ยงเลือกแยกได้ • เมื่อปิดแยก Novice บุคลากรจะกลับมานับในกำลังหลัก</p><form id="staffingForm" class="toolbar"><label>การลงวันที่เวรดึก<select id="nightMode"><option value="back">ดึกโย้หลัง — ทำงานเช้าวันที่เขียน</option><option value="front">ดึกโย้หน้า — ทำงานเช้าวันถัดไป</option></select></label><p class="help" id="nightModeHint" style="width:100%"></p><label class="grow">ชื่อวอร์ด<input id="wardName" required maxlength="150"></label><div style="width:100%;display:flex;gap:20px;flex-wrap:wrap"><label class="check"><input type="checkbox" id="useStroke">ใช้ Stroke Nurse</label><label class="check"><input type="checkbox" id="useSenior">ขั้นต่ำ Senior</label><label class="check"><input type="checkbox" id="useCompetent">ขั้นต่ำ Competent</label><label class="check"><input type="checkbox" id="useNovice">แยก Novice</label></div><label>เช้า RN<input id="needช" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="stroke">เช้า Stroke ขั้นต่ำ<input id="skillช" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="senior">เช้า Senior ขั้นต่ำ<input id="seniorช" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="competent">เช้า Competent ขั้นต่ำ<input id="competentช" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="novice">เช้า Novice แยก<input id="noviceช" type="number" min="0" max="100" required style="width:90px"></label><label>บ่าย RN<input id="needบ" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="stroke">บ่าย Stroke ขั้นต่ำ<input id="skillบ" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="senior">บ่าย Senior ขั้นต่ำ<input id="seniorบ" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="competent">บ่าย Competent ขั้นต่ำ<input id="competentบ" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="novice">บ่าย Novice แยก<input id="noviceบ" type="number" min="0" max="100" required style="width:90px"></label><label>ดึก RN<input id="needด" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="stroke">ดึก Stroke ขั้นต่ำ<input id="skillด" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="senior">ดึก Senior ขั้นต่ำ<input id="seniorด" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="competent">ดึก Competent ขั้นต่ำ<input id="competentด" type="number" min="0" max="100" required style="width:90px"></label><label data-feature="novice">ดึก Novice แยก<input id="noviceด" type="number" min="0" max="100" required style="width:90px"></label><div style="width:100%"><label class="check"><input type="checkbox" id="useRolling" checked>จำกัดไม่เกิน 8 เวร ในทุกช่วง 7 วันต่อเนื่อง</label><p class="help">รวมเวรคู่และรอยต่อเดือนที่มีข้อมูล • เอาติ๊กออกเพื่อไม่ใช้เพดานนี้ กฎวันลา เวรล็อก เวรซ้ำ และพี่เลี้ยงยังทำงานตามที่ตั้งไว้ • หากจัดครบไม่ได้ ระบบจะถามก่อนจัดตารางบางส่วน</p></div><div class="mentor-options"><label>การจับคู่พี่เลี้ยง<select id="mentorMode"><option value="none">ไม่บังคับพี่เลี้ยง</option><option value="auto">จับคู่อัตโนมัติจากผู้มีสิทธิ์</option><option value="fixed">ใช้คู่ที่กำหนด / ไม่ระบุคู่ให้จับอัตโนมัติ</option></select></label><label id="mentorCapacityField">พี่เลี้ยง 1 คน ดูแล Novice ได้สูงสุดต่อเวร<input id="mentorCapacity" type="number" min="1" max="20" value="1" required></label><p class="help">คู่ต้องขึ้นเวรเดียวกัน ตรวจแยกทุกเวร รวมเวรคู่ • โหมดอัตโนมัติจะไม่บังคับคู่ที่เลือก • โหมดไม่บังคับจะไม่ตรวจหรือจัดคู่</p></div><button class="primary">บันทึกชื่อวอร์ด / ใช้เงื่อนไข</button></form><div id="capacityInfo"></div></div><div class="stats" id="stats"></div><section class="shift-dashboard" aria-labelledby="shiftDashboardTitle"><h2 id="shiftDashboardTitle">สรุปเวรเช้า · บ่าย · ดึก</h2><p class="muted" id="shiftDashboardPeriod"></p><div class="shift-cards" id="shiftCards" aria-live="polite"></div><p class="help">ยอดกำลังหลักไม่รวม Novice เมื่อเปิดตัวเลือก • นับจำนวนเวร: เวรคู่ = 2 เวร โดยนับตามตัวอักษรในช่อง · ไม่นับ OFF, VA และช่องว่าง</p><details><summary>ดูจำนวนเวรแยกรายคน</summary><div class="datawrap" id="shiftPersonTable"></div></details></section><div id="v2Info" class="notice version2-strip hidden">พยายามจัด OFF ต่อเนื่อง 3–4 วันให้แต่ละคน โดยย้ายเวรไปวันอื่นและยังตรวจทุกเงื่อนไข ระบบจะบอกว่าใครได้ช่วงหยุดแล้ว และใครยังจัดให้ไม่ได้</div>
+<nav class="tabs" aria-label="เมนูหลัก"><button data-tab="roster" class="active">ตารางเวร</button><button data-tab="leave">ขอ VA / วันหยุด</button><button data-tab="people">รายชื่อ RN</button><button data-tab="calendar">วันทำการ / OT</button><button data-tab="settings">กฎ / รอยต่อเดือน</button><button data-tab="checks">ตรวจเงื่อนไข</button><button data-tab="help">วิธีใช้ / ข้อมูล</button></nav>
+<section id="panel-roster" class="panel"><div class="tablebar"><strong id="tableTitle"></strong><div class="grow"></div><label class="check"><input id="paintMode" type="checkbox">ระบายสีช่อง</label><input type="color" id="paintColor" value="#fff0ad" aria-label="สีไฮไลต์"><button id="undoBtn" class="subtle-button">ย้อนกลับ</button><button id="excelBtn" class="subtle-button">ส่งออก Excel (.xlsx)</button><button id="csvBtn" class="subtle-button">ส่งออก CSV</button><button id="pdfBtn" class="subtle-button">ดาวน์โหลด PDF</button><button id="printBtn" class="subtle-button">พิมพ์</button></div><div class="legend muted"><span class="pill" id="nightLegend">ด 00:01–08:00</span><span class="pill">ช 08:00–16:00</span><span class="pill">บ 16:00–24:00</span><span class="pill" id="doubleLegend">เวรคู่ = 2 เวร</span><span class="pill stroke" data-feature="stroke">S = Stroke nurse</span><span class="pill" data-feature="senior">SR = Senior nurse</span><span class="pill" data-feature="novice">N = Novice (แยกกำลัง)</span><span>คลิกช่องเพื่อแก้เวร / หมายเหตุ / สี / ล็อก</span></div><p class="boundary-guide no-print">กำหนดเวรวันสุดท้ายของเดือนก่อนที่ช่อง “เวรรอยต่อ” หลังชื่อแต่ละคน · ใช้ตรวจและจัดเวรวันที่ 1 · ? = ยังไม่ทราบ</p><div id="resultBanner"></div><div class="table-scroll" id="rosterWrap"></div><div class="print-only" id="printNotes"></div><label class="section-gap no-print">หมายเหตุประจำเดือน<textarea id="monthlyNote" rows="2" placeholder="ประชุม อบรม หรือหมายเหตุของตารางเดือนนี้"></textarea></label><section class="section-gap" aria-label="หมายเหตุของตาราง"><h3>หมายเหตุ</h3><div id="tableRemarks" style="white-space:pre-wrap"></div><div id="signatureBlock" class="signature-block"></div></section><details class="section-gap" open><summary>คู่พี่เลี้ยง–Novice ตามตารางปัจจุบัน</summary><div id="mentorReport" class="datawrap"></div></details><div class="footnote" id="historyWarning"></div></section>
+<section id="panel-leave" class="panel hidden"><h2>ขอวันหยุดล่วงหน้า</h2><p class="help">คำขอที่ “อนุมัติ” จะเป็นวันห้ามจัดเวร Guest ส่งคำขอรออนุมัติได้ ส่วนบัญชี C7 อนุมัติได้ และเลือก VA จากตารางเพื่ออนุมัติทันทีได้</p><form id="leaveForm" class="form-grid"><label>พยาบาล<select id="leavePerson" required></select></label><label>ประเภท<select id="leaveType"><option value="VA">VA — ลาพักร้อน</option><option value="OFF">OFF — ขอวันหยุด</option></select></label><label>สถานะ<select id="leaveStatus"><option value="pending">รออนุมัติ</option><option value="approved">อนุมัติ</option><option value="rejected">ไม่อนุมัติ</option></select></label><label>วันที่เริ่ม<input type="date" id="leaveStart" required></label><label>วันที่สิ้นสุด<input type="date" id="leaveEnd" required></label><label>วันที่ยื่นคำขอ<input type="date" id="leaveRequested" required></label><label class="full">หมายเหตุ<input id="leaveNote" maxlength="500" placeholder="ระบุเหตุผลหรือรายละเอียดที่จำเป็น"></label><div class="full"><button class="primary">บันทึกคำขอ</button></div></form><div class="section-gap datawrap" id="leaveList"></div></section>
+<section id="panel-people" class="panel hidden"><h2>รายชื่อ RN</h2><p class="help">รายชื่อเริ่มต้น นาย A–E · เพิ่ม แก้ชื่อ และลบบุคลากรได้ · เลือกเข้าร่วมเป็นรายเดือนและรายเวอร์ชัน • เรียง Senior → Competent → Novice → RN ยังไม่ระบุระดับ (ภายในระดับคงลำดับเดิม)</p><form id="personForm" class="tablebar"><label class="grow">ชื่อ RN<input id="personName" required maxlength="150" placeholder="ชื่อ–นามสกุล"></label><label>ระดับที่วอร์ดกำหนด<select id="personLevel"><option value="rn">RN · ยังไม่ระบุระดับ</option><option value="novice">Novice</option><option value="competent">Competent</option><option value="senior">Senior</option></select></label><label class="check"><input id="personStroke" type="checkbox">Stroke Nurse</label><label class="check"><input id="personMentor" type="checkbox">เป็นพี่เลี้ยงได้</label><button class="primary">เพิ่ม RN</button></form><p class="help">ทุกคนเริ่มเป็น RN ยังไม่ระบุระดับ • ระดับเลือกได้หนึ่งอย่าง • ทักษะ Stroke และสิทธิ์พี่เลี้ยงแยกกัน • Novice ไม่เป็นพี่เลี้ยงให้คนอื่น • การระบุข้อมูลไม่ใช่การเปิดบังคับเงื่อนไขจัดเวร</p><div class="datawrap" id="peopleList"></div></section>
+<section id="panel-calendar" class="panel hidden"><div class="notice warn">ฐานปี 2570 เป็นปฏิทินสำหรับวางแผน ยังไม่ถือเป็นประกาศวันหยุดของโรงพยาบาล และยังไม่รวมวันพืชมงคล / วันหยุดพิเศษที่ยืนยันไม่ได้ กรุณาปรับตามประกาศหน่วยงานก่อนใช้คำนวณจริง</div><div class="calendar-settings"><div><h2>วันทำการปี <span id="calYear"></span></h2><div id="yearCards" class="year-grid"></div><h3>ปรับวันทำการเดือนนี้</h3><p class="help">คลิกวันที่เพื่อสลับ วันทำการ / วันหยุด สีเหลืองคือวันหยุด</p><div id="calMonth" class="calendar-month"></div><button class="section-gap" id="resetCalendar">คืนการปรับวันของเดือนนี้</button></div><div><h2>คำนวณ OT</h2><div class="notice">เวร OT = เวรที่ขึ้นจริง − เกณฑ์เวรประจำ<br>ชั่วโมง OT = เวร OT × 8<br>ค่าตอบแทนประมาณการ = ชั่วโมง OT × อัตราที่หน่วยงานกำหนด</div><label>อัตรา OT บาท / ชั่วโมง (เว้นว่างถ้ายังไม่ทราบ)<input type="number" id="otRate" min="0" step="0.01" placeholder="กรอกอัตราของโรงพยาบาล"></label><label class="check section-gap"><input type="checkbox" id="vaCredit">หัก VA ที่อนุมัติและตรงวันทำการออกจากเกณฑ์เวรประจำ</label><p class="help">ค่าเริ่มต้นไม่หัก VA · เปิดตัวเลือกนี้เมื่อระเบียบหน่วยงานรองรับเท่านั้น สูตรนี้เป็นตัวช่วยวางแผน ไม่ได้ตัดสินสิทธิเบิกจ่ายหรือรวมเงินเวรบ่าย/ดึก</p><h3>เพิ่มวันหยุดของหน่วยงาน</h3><form id="holidayForm" class="form-grid"><label>วันที่<input id="holidayDate" type="date" required></label><label>ชื่อวันหยุด<input id="holidayName" required maxlength="180"></label><div><br><button>เพิ่มวันหยุด</button></div></form></div></div><details class="section-gap"><summary>รายการวันหยุดในฐานข้อมูลปีที่เลือก</summary><div id="holidayList" class="datawrap"></div></details><div class="section-gap datawrap" id="otTable"></div></section>
+<section id="panel-settings" class="panel hidden"><h2>เงื่อนไขการจัดเวร</h2><div class="two-col"><div><div class="notice">จำนวน RN และทักษะขั้นต่ำต่อเวร ใช้เฉพาะตัวเลือกที่เปิดในอัตรากำลังวอร์ด<br>เมื่อเปิดตัวเลือก: ทุกช่วง 7 วันห้ามเกิน 8 เวร / คน<br>เวรที่มี บ ห้ามต่อด้วยเวรที่มี ด ในวันถัดไป<br>เวรชนิดเดิม (เช้า / บ่าย / ดึก) ต่อกันได้ไม่เกิน 2 วัน รวมชนิดเวรในเวรคู่<br>พยายามเฉลี่ยจำนวนเช้า–บ่าย–ดึกของแต่ละคน และกระจายภายในกลุ่ม Stroke / RN ทั่วไป</div><label>เกณฑ์ขั้นต่ำเทียบกับวันทำการ<select id="minimum"><option value="units">นับจำนวนเวร (เวรคู่ = 2) — ค่าเริ่มต้น</option><option value="days">นับจำนวนวันที่มาขึ้นงาน (เวรคู่ = 1 วัน)</option></select></label><p class="help">โย้หลัง: ด วันที่ 2 ทำงาน 00:01–08:00 วันที่ 2 จึงห้าม บ วันที่ 1 ต่อ ด วันที่ 2 • โย้หน้า: ด วันที่ 2 ทำงานเช้าวันที่ 3 จึงห้าม บ และ ด ในช่องวันเดียวกัน และห้าม ด ต่อ ช ในช่องวันถัดไป</p></div><div><label>เป้าหมายวันหยุดของหน้า 2<select id="blockLength"><option value="4">พยายาม 4 วัน ถ้าไม่ได้ลอง 3 วัน</option><option value="3">พยายาม 3 วัน</option></select></label><label class="section-gap">เวลาค้นหา<select id="searchBudget"><option value="1600">ปกติ</option><option value="4500">ละเอียดขึ้น (คำขอหยุดหลายคน)</option></select></label><p class="help">การเฉลี่ยเช้า–บ่าย–ดึกเป็นเป้าหมายเสริม จำนวนอาจไม่เท่ากันตาม VA ช่องล็อก และกำลังคนแต่ละกลุ่ม ส่วนห้ามเวรชนิดเดิมติดกันเกิน 2 วันเป็นข้อบังคับ รวมรอยต่อเดือนที่ทราบข้อมูล การค้นหาไม่รับประกันคำตอบที่ดีที่สุด หากยังหาไม่พบจะสร้างตารางบางส่วนพร้อมแสดงตำแหน่งที่ขาด โดยไม่เพิ่มเวรที่ผิดกฎ การหยุด 3–4 วันเป็นเป้าหมายเสริม ส่วนเงื่อนไขเวรเป็นข้อบังคับ</p><button id="copyOther">คัดลอกตารางจากอีกเวอร์ชัน</button></div></div><h2 class="section-gap">เวรก่อนเริ่มเดือน (โย้หลัง 6 ช่อง / โย้หน้า 7 ช่อง)</h2><p class="help">ระบบดึงจากตารางเดือนก่อนของเวอร์ชันเดียวกันอัตโนมัติ ถ้ายังไม่มี ให้กรอกที่นี่ เครื่องหมาย ? หมายถึงยังไม่ทราบ ไม่ใช่ OFF จึงยังรับรองเงื่อนไขข้ามเดือนไม่ได้</p><div id="priorExtraBox" class="hidden"><p class="help">โย้หน้าต้องใช้ย้อนหลังเพิ่มอีก 1 ช่อง เพื่อให้เวรดึกที่เลื่อนวันถูกนับครบในช่วง 7 วันจริง</p><div class="datawrap" id="priorExtraTable"></div></div><div class="datawrap" id="historyTable"></div><h2 class="section-gap">เวร 6 วันถัดจากเดือนนี้</h2><p class="help">ใช้ตรวจรอยต่อปลายเดือน หากตารางเดือนถัดไปมีแล้ว ระบบจะดึงให้อัตโนมัติ</p><div class="datawrap" id="tailTable"></div></section>
+<section id="panel-checks" class="panel hidden"><h2>ผลตรวจเงื่อนไข</h2><div id="checkSummary"></div><div id="issuesList"></div><h2 class="section-gap">วันหยุดต่อเนื่อง / ภาระงาน</h2><div class="datawrap" id="offTable"></div></section>
+<section id="panel-help" class="panel hidden help"><h2>เริ่มใช้งาน</h2><ol><li>เลือกเดือนและปี แล้วตรวจรายชื่อ RN</li><li>กรอกคำขอ VA / OFF ล่วงหน้า และเปลี่ยนเป็น “อนุมัติ” เมื่อได้รับอนุมัติแล้ว</li><li>ตรวจวันทำการของโรงพยาบาล กรอกเวรเดือนก่อนและเดือนถัดไปถ้ามี</li><li>กด “สร้างตารางเวร” เลือกหน้า 2 หากต้องการพยายามจัด OFF ติดกัน</li><li>คลิกช่องเพื่อแก้เวร ใส่หมายเหตุ สี และล็อกไม่ให้การสร้างรอบหน้าเปลี่ยนช่องนั้น ช่องผิดกฎเป็นตัวแดง</li><li>กด “บันทึกข้อมูล” และ “สำรองไฟล์” เพื่อเก็บสำเนา JSON ก่อนย้ายเครื่องหรือเปลี่ยนเบราว์เซอร์</li></ol><h3>กำหนดเวรรอยต่อรายคน</h3><p>คลิกช่อง “เวรรอยต่อ” ถัดจากชื่อ เลือกเวรวันสุดท้ายของเดือนก่อน แล้วกดบันทึก หรือบันทึกและจัดตารางใหม่ ตัวอย่างโย้หลัง: จบเดือนก่อนด้วย บ จะไม่จัด ด วันที่ 1 • ตัวอย่างโย้หน้า: จบเดือนก่อนด้วย ด จะไม่จัด ช วันที่ 1 ค่านี้ใช้เฉพาะเดือนและหน้าที่เลือก และไม่เพิ่มยอดเวรในเดือนใหม่</p><p>ค่าที่กำหนดจะแสดงตรงกันในเมนูกฎ หากต้องการคืนค่าเดิม ให้เลือก “ใช้ข้อมูลย้อนหลังเดิม / เดือนก่อน” เวรวันเดียวใช้ตรวจรอยต่อได้บางส่วน ควรกรอก 6 วันย้อนหลังเพื่อตรวจทุกช่วง 7 วันให้ครบ</p><h3>ข้อมูลเก็บที่ไหน</h3><p>เก็บในเบราว์เซอร์ของเครื่องนี้โดยอัตโนมัติ ไม่มีการส่งรายชื่อไปเว็บตัวอย่าง ข้อมูลอาจหายเมื่อเคลียร์ข้อมูลเบราว์เซอร์ เปลี่ยนเครื่อง หรือย้ายตำแหน่งไฟล์ จึงควรสำรอง JSON ไว้เสมอ ทั้งสองหน้าทำงานผ่านไฟล์ index.html เดียวกันเพื่อใช้ข้อมูลร่วมกัน</p><div class="row-actions"><button id="importBtn">กู้คืนจากไฟล์ JSON</button><input id="importFile" type="file" accept=".json,application/json" class="hidden"></div><h3>ที่มาของข้อมูล</h3><p>รายชื่อจาก “ตรว อายุรกรรมชาย.xlsx” ชีต “RN ตค” ตรวจเทียบกับชีต RN อื่น ตัดรหัสเวรท้ายชื่อออก ไม่มีการนำเวรเดิมมาเป็นเวรใหม่หรือถือเป็นคำขอ VA</p><p>รูปแบบตั้งค่า → บุคลากร → กฎ → ผลลัพธ์ อ้างอิงแนวใช้งานจาก <a href="https://shift-optimizer.com/create?preset=8hr" target="_blank" rel="noopener">Shift Optimizer</a> โดยออกแบบหน้าตาและระบบใหม่</p><p>ฐานวันหยุดตรวจข้อมูลวันที่ 25 กันยายน 2569: <a href="https://www.infoquest.co.th/holidays/year-2569" target="_blank" rel="noopener">ปฏิทิน 2569</a> · <a href="https://patithinthai.com/holidays/2570/" target="_blank" rel="noopener">ปฏิทินวางแผน 2570</a> · <a href="https://www.prd.go.th/th/content/category/detail/id/33/iid/524338" target="_blank" rel="noopener">ประกาศเกี่ยวกับ 12 สิงหาคม</a></p><p>ใช้ฐานราชการทั่วไป ไม่รวมวันแรงงาน 1 พฤษภาคมซึ่งไม่ใช่วันหยุดราชการทั่วไป หรือวันหยุดเฉพาะกรุงเทพฯ ไม่ถือว่าเป็นปฏิทินยืนยันของมหาวิทยาลัยวลัยลักษณ์</p><p>OT: ยังยืนยันระเบียบและอัตราปัจจุบันของโรงพยาบาลไม่ได้ จึงไม่มีอัตราเงินตั้งต้น ชั่วโมงที่แสดงมาจากจำนวนเวร × 8 และฐานวันทำการที่คุณเลือก ข้อมูลการจ้างงานของมหาวิทยาลัยระบุค่าตอบแทนตามระเบียบของมหาวิทยาลัย: <a href="https://www.wu.ac.th/th/news/12978" target="_blank" rel="noopener">แหล่งข้อมูลมหาวิทยาลัย</a></p><h3>ขอบเขตผลตรวจ</h3><p>สีเขียวหมายถึงผ่านเฉพาะข้อมูลและกฎที่กรอก ไม่ได้แทนการอนุมัติตาราง ไม่มีการตรวจความสามารถเฉพาะโรคอื่นหรือกฎพักเพิ่มเติมที่ยังไม่ได้กำหนด เมื่อเพิ่ม RN มากขึ้นจนเวรขั้นต่ำรวมเกินจำนวนเวรที่เปิด ระบบจะแจ้งว่าขัดกัน</p><p>ช่อง OFF ในสรุปหยุดต่อเนื่องไม่นับ VA ปะปน และเมื่อเปิดกฎสูงสุด 8 เวร จะตรวจแบบเลื่อนหน้าต่างทุก 7 วัน ไม่ใช่แบ่งสัปดาห์จันทร์–อาทิตย์</p></section>
+</main>
+
+<dialog class="modal" id="boundaryDialog" aria-labelledby="boundaryTitle"><header><div><h2 id="boundaryTitle">กำหนดเวรรอยต่อ</h2><strong id="boundaryPerson"></strong><div class="muted" id="boundaryDate"></div><div class="muted" id="boundaryScope"></div></div><button id="closeBoundary" aria-label="ปิดเวรรอยต่อ">×</button></header><label>เวรวันสุดท้ายของเดือนก่อน<select id="boundaryShift"></select></label><div class="notice" id="boundaryHint" aria-live="polite"></div><p class="help" id="boundaryKnown"></p><p class="help">เวรรอยต่อใช้ตรวจเงื่อนไขเท่านั้น ไม่รวมในยอดเวรหรือ OT ของเดือนนี้ การกดบันทึกจะตรวจตารางปัจจุบันทันที หากต้องการให้ระบบจัดใหม่ ให้กด “บันทึกและจัดตารางใหม่”</p><button class="subtle-button" id="boundaryHistory">เปิดข้อมูลย้อนหลัง 6 วัน (ไม่บันทึกการเลือกนี้)</button><footer><button id="cancelBoundary">ยกเลิก</button><button id="saveBoundary">บันทึกเวรรอยต่อ</button><button class="primary" id="generateBoundary">บันทึกและจัดตารางใหม่</button></footer></dialog>
+<dialog class="modal" id="loginDialog"><h2>เข้าสู่ระบบ C7</h2><p class="help">บัญชี C7 สามารถอนุมัติ VA ได้ หรือเลือก Guest เพื่อใช้งานและส่งคำขอรออนุมัติ</p><form id="loginForm"><label>Username<input id="loginUsername" autocomplete="username" required></label><label class="section-gap">Password<input id="loginPassword" type="password" autocomplete="current-password" required></label><p id="loginError" class="status-bad" role="alert"></p><footer><button type="button" id="guestBtn">เข้าใช้งาน Guest</button><button type="submit" class="primary">Login</button></footer></form></dialog>
+<dialog class="modal" id="clearAllDialog"><h2>ล้างตารางเวรทั้งหมด</h2><p>ล้างตารางทุกเดือนทั้งสองเวอร์ชัน รวมสี หมายเหตุ ล็อก รอยต่อเดือน และคำขอ VA / OFF ทั้งหมด เก็บรายชื่อ การตั้งค่า และ mock data ล่าสุดไว้</p><form id="clearAllForm"><label>ยืนยันรหัส Login<input id="clearAllPassword" type="password" autocomplete="current-password" required></label><p id="clearAllError" class="status-bad" role="alert"></p><footer><button type="button" id="cancelClearAll">ยกเลิก</button><button class="danger" type="submit">ยืนยันล้างทั้งหมด</button></footer></form></dialog>
+<dialog class="modal" id="cellDialog"><header><div><h2 id="cellTitle"></h2><div class="muted" id="cellSubtitle"></div></div><button id="closeCell" aria-label="ปิด">×</button></header><div class="choices" id="shiftChoices"></div><label class="section-gap">หมายเหตุของช่อง<textarea id="cellNote" maxlength="1000"></textarea></label><label class="section-gap">สีไฮไลต์</label><div class="colors" id="cellColors"></div><label class="check section-gap"><input id="cellLock" type="checkbox">ล็อกช่องนี้ไว้เมื่อสร้างตารางใหม่</label><p class="help" id="cellLeaveHint"></p><footer><button id="cancelCell">ยกเลิก</button><button class="primary" id="applyCell">บันทึกช่องนี้</button></footer></dialog>
+<dialog class="modal" id="exportDialog" aria-labelledby="exportTitle"><header><h2 id="exportTitle">รับทราบเงื่อนไขก่อนส่งออก</h2></header><p id="exportSummary"></p><ul id="exportIssues" class="issues"></ul><p class="help">ไฟล์ส่งออกจะไม่แสดงกรอบหรือตัวแดงจากการตรวจเงื่อนไข แต่ยังระบุสถานะและการรับทราบไว้ การรับทราบไม่ได้ทำให้ตารางผ่านเงื่อนไข</p><label class="check"><input type="checkbox" id="exportAcknowledged">ฉันได้ตรวจสอบและรับทราบข้อผิดเงื่อนไข / คำเตือนของตารางนี้เรียบร้อยแล้ว</label><footer><button id="exportCancel">ยกเลิก</button><button class="primary" id="exportConfirm" disabled>รับทราบและส่งออก</button></footer></dialog>
+<div id="toast" class="toast hidden" role="status"></div>
+<script>const INITIAL_NURSES=Array.from('ABCDE',(letter,i)=>({id:'rn'+(i+1),name:'นาย '+letter,stroke:false,level:'rn',mentor:false,mentorId:'',active:true}));</script><script id="engine">(function(root){
+'use strict';
+const CODES=['OFF','ด','ช','บ','ด/บ','ช/บ','ช/ด','VA'];
+const MASK={'OFF':0,'ด':1,'ช':2,'บ':4,'ด/บ':5,'ช/บ':6,'ช/ด':3,'VA':0,'':0};
+const FROM={0:'OFF',1:'ด',2:'ช',3:'ช/ด',4:'บ',5:'ด/บ',6:'ช/บ'};
+const W=m=>(m&1?1:0)+(m&2?1:0)+(m&4?1:0);
+const pad=n=>String(n).padStart(2,'0');
+const key=(y,m,d)=>`${y}-${pad(m)}-${pad(d)}`;
+const days=(y,m)=>new Date(Date.UTC(y,m,0)).getUTCDate();
+const weekday=(y,m,d)=>new Date(Date.UTC(y,m-1,d)).getUTCDay();
+const fixed=[['01-01','วันขึ้นปีใหม่'],['04-06','วันจักรี'],['04-13','สงกรานต์'],['04-14','สงกรานต์'],['04-15','สงกรานต์'],['05-04','วันฉัตรมงคล'],['06-03','วันเฉลิมพระชนมพรรษาพระบรมราชินี'],['07-28','วันเฉลิมพระชนมพรรษาพระบาทสมเด็จพระเจ้าอยู่หัว'],['08-12','วันแม่แห่งชาติ'],['10-13','วันนวมินทรมหาราช'],['10-23','วันปิยมหาราช'],['12-05','วันพ่อแห่งชาติ / วันชาติ'],['12-10','วันรัฐธรรมนูญ'],['12-31','วันสิ้นปี']];
+function holidays(){
+ const out=[];
+ for(const y of [2026,2027]){
+  for(const [dt,name] of fixed)out.push({date:`${y}-${dt}`,name,status:y===2027?'ฐานวางแผน — รอยืนยันหน่วยงาน':'วันหยุดประจำปี',enabled:true});
+ }
+ const extra={2026:[['01-02','วันหยุดพิเศษ'],['03-03','วันมาฆบูชา'],['05-13','วันพืชมงคล'],['05-31','วันวิสาขบูชา'],['06-01','ชดเชยวันวิสาขบูชา'],['07-29','วันอาสาฬหบูชา'],['07-30','วันเข้าพรรษา'],['12-07','ชดเชยวันพ่อแห่งชาติ']],2027:[['02-21','วันมาฆบูชา'],['02-22','ชดเชยวันมาฆบูชา'],['05-20','วันวิสาขบูชา'],['07-18','วันอาสาฬหบูชา'],['07-19','วันเข้าพรรษา'],['07-20','ชดเชยวันอาสาฬหบูชา'],['10-25','ชดเชยวันปิยมหาราช'],['12-06','ชดเชยวันพ่อแห่งชาติ']]};
+ for(const y of [2026,2027])for(const [dt,name] of extra[y])out.push({date:`${y}-${dt}`,name,enabled:true,status:y===2027?'ประมาณการ — รอยืนยันประกาศ':'ฐานราชการทั่วไป'});
+ return out.sort((a,b)=>a.date.localeCompare(b.date));
+}
+function calendar(y,m,hs,overrides={}){
+ const rows=Array.from({length:days(y,m)},(_,i)=>{const d=i+1,k=key(y,m,d),h=hs.filter(x=>x.enabled&&x.date===k),wd=weekday(y,m,d);return {day:d,date:k,weekday:wd,holiday:h.map(x=>x.name).join(' / '),work:overrides[k]!==undefined?overrides[k]:(wd!==0&&wd!==6&&!h.length)};});
+ return {rows,workdays:rows.filter(x=>x.work).length};
+}
+function summary(row,base,credit=0,rate=null){
+ const units=row.reduce((s,c)=>s+W(MASK[c]||0),0),worked=row.filter(c=>W(MASK[c]||0)>0).length;
+ let maxoff=0,run=0,blocks=[];row.forEach((c,i)=>{if(c==='OFF'){run++;maxoff=Math.max(maxoff,run);}else{if(run>=3)blocks.push([i-run+1,i]);run=0;}});if(run>=3)blocks.push([row.length-run+1,row.length]);
+ const ot=Math.max(0,units-Math.max(0,base-credit));
+ const shifts=Object.fromEntries([['ด',1],['ช',2],['บ',4]].map(([label,bit])=>[label,row.filter(c=>(MASK[c]||0)&bit).length]));
+ return {shifts,units,worked,va:row.filter(c=>c==='VA').length,off:row.filter(c=>c==='OFF').length,ot,hours:units*8,otHours:ot*8,money:rate===null||rate===''?null:ot*8*Number(rate),maxoff,blocks};
+}
+function nightMode(p){return p.nightMode==='front'?'front':'back';}
+function allowedMasks(p){return nightMode(p)==='front'?[0,1,2,3,4,6]:[0,1,2,4,5,6];}
+function activeCodes(p){return ['OFF',...allowedMasks(p).filter(Boolean).map(m=>FROM[m]),'VA'];}
+// Convert labelled cells to real calendar days; retain source indices for warnings.
+function temporalIssues(codes,p){
+ const front=nightMode(p)==='front',out=[],masks=codes.map(c=>typeof c==='number'?c:(MASK[c]||0));
+ const source=(j,bit)=>front&&bit===1?j-1:j;
+ const actual=Array.from({length:codes.length+(front?1:0)},(_,j)=>front?((masks[j]||0)&6)|((masks[j-1]||0)&1):(masks[j]||0));
+ const add=(type,text,indices)=>out.push({type,text,indices:[...new Set(indices.filter(i=>i>=0&&i<codes.length))]});
+ for(let j=0;j<actual.length;j++){
+  if((actual[j]&3)===3)add('pair','ด ต่อ ช ไม่มีช่วงพัก (ตามเวลาทำงานจริง)',[source(j,1),source(j,2)]);
+  if(j>0&&(actual[j-1]&4)&&(actual[j]&1))add('transition','บ ต่อ ด ไม่มีช่วงพัก (ตามเวลาทำงานจริง)',[source(j-1,4),source(j,1)]);
+  if(j>=2)for(const [label,bit]of [['ด',1],['ช',2],['บ',4]])if(actual.slice(j-2,j+1).every(m=>m&bit))add('repeat',`เวร ${label} ติดกันเกิน 2 วัน`,[j-2,j-1,j].map(k=>source(k,bit)));
+  if(rollingEnabled(p)&&j>=6){const total=actual.slice(j-6,j+1).reduce((a,m)=>a+W(m),0);if(total>8){const indices=[];for(let k=j-6;k<=j;k++)for(const bit of [1,2,4])if(actual[k]&bit)indices.push(source(k,bit));add('rolling',`${total} เวรใน 7 วันตามวันทำงานจริง`,indices);}}
+ }
+ return out;
+}
+function rollingEnabled(p){return p.useRolling!==false;}
+function demand(p){return p.demand||{'ช':3,'บ':3,'ด':3};}
+function enabled(p,k){return k==='stroke'?p.useStroke!==false:!!p['use'+k[0].toUpperCase()+k.slice(1)];}
+function skill(p){return enabled(p,'stroke')?(p.skill||{'ช':1,'บ':1,'ด':1}):{'ช':0,'บ':0,'ด':0};}
+function seniorNeed(p){return enabled(p,'senior')?(p.seniorNeed||{'ช':1,'บ':1,'ด':1}):{'ช':0,'บ':0,'ด':0};}
+function noviceNeed(p){return enabled(p,'novice')?(p.noviceNeed||{'ช':0,'บ':0,'ด':0}):{'ช':0,'บ':0,'ด':0};}
+function levelOf(n){return n.level||(n.novice?'novice':n.senior?'senior':'rn');}
+function isNovice(p,n){return enabled(p,'novice')&&levelOf(n)==='novice';}
+function competentNeed(p){return enabled(p,'competent')?(p.competentNeed||{'ช':0,'บ':0,'ด':0}):{'ช':0,'บ':0,'ด':0};}
+function mentorEligible(n){return !!n.mentor&&levelOf(n)!=='novice';}
+function matchTeam(p,team){
+ const mode=p.mentorMode||'none';if(mode==='none')return {pairs:[],unmatched:[]};
+ const cap=p.mentorCapacity||1,mentors=team.filter(mentorEligible),learners=team.filter(n=>levelOf(n)==='novice');
+ const slots=mentors.flatMap(m=>Array.from({length:Math.min(cap,learners.length)},()=>m)),owners=Array(slots.length).fill(null);
+ const allowed=n=>slots.map((m,i)=>mode==='fixed'&&n.mentorId&&n.mentorId!==m.id?-1:i).filter(i=>i>=0&&slots[i].id!==n.id);
+ function place(n,seen){for(const i of allowed(n)){if(seen.has(i))continue;seen.add(i);if(!owners[i]||place(owners[i],seen)){owners[i]=n;return true;}}return false;}
+ for(const n of [...learners].sort((a,b)=>allowed(a).length-allowed(b).length))place(n,new Set());
+ const pairs=owners.flatMap((n,i)=>n?[{noviceId:n.id,mentorId:slots[i].id}]:[]),assigned=new Set(pairs.map(x=>x.noviceId));
+ return {pairs,unmatched:learners.filter(n=>!assigned.has(n.id)).map(n=>({noviceId:n.id,reason:mode==='fixed'&&n.mentorId&&!mentors.some(m=>m.id===n.mentorId)?'พี่เลี้ยงที่เลือกไม่อยู่ในเวรหรือไม่มีสิทธิ์เป็นพี่เลี้ยง':!mentors.length?'ไม่มีผู้มีสิทธิ์เป็นพี่เลี้ยงร่วมเวร':'พี่เลี้ยงรับดูแลเต็มจำนวนในเวรนี้'}))};
+}
+
+
+function validate(p){
+ const {nurses,rows,D,base,requests={},prior={},next={},locks={},minimum='units',vaCredit=false}=p;
+ const issues=[],bad={},badDays={},sums={},coverage=[];
+ const add=(type,message,id=null,ds=[])=>{issues.push({type,message,id,days:ds});if(id)for(const d of ds)if(d>=0&&d<D)(bad[id]??={})[d]=true;for(const d of ds)if(d>=0&&d<D)badDays[d]=true;};
+ for(const n of nurses){
+  const row=rows[n.id]||Array(D).fill(''),credit=vaCredit?Object.values(requests[n.id]||{}).filter(r=>r.type==='VA'&&r.status==='approved'&&r.work).length:0;
+  const s=summary(row,base,credit,p.rate);sums[n.id]=s;
+  if(s[minimum==='days'?'worked':'units']<Math.max(0,base-credit))add('minimum',`${n.name}: ${minimum==='days'?'วันขึ้นงาน':'เวรรวม'} ${s[minimum==='days'?'worked':'units']} ต่ำกว่าเกณฑ์ ${Math.max(0,base-credit)}`,n.id,Array.from({length:D},(_,i)=>i));
+  for(let d=0;d<D;d++){
+   if(!CODES.includes(row[d]))add('empty',`${n.name} วันที่ ${d+1}: ยังไม่มีเวร`,n.id,[d]);
+   const r=requests[n.id]?.[d];if(r&&r.status==='approved'&&row[d]!==r.type)add('leave',`${n.name} วันที่ ${d+1}: ไม่ตรงวันหยุดที่อนุมัติ (${r.type})`,n.id,[d]);
+   if(row[d]==='VA'&&!(r?.type==='VA'&&r.status==='approved'))add('va',`${n.name} วันที่ ${d+1}: VA ยังไม่มีคำขออนุมัติ`,n.id,[d]);
+   if(locks[n.id]?.[d]!==undefined&&locks[n.id][d]!==row[d])add('lock',`${n.name} วันที่ ${d+1}: เวรไม่ตรงช่องล็อก`,n.id,[d]);
+  }
+  const before=(prior[n.id]||Array(6).fill(null)).slice(-7),after=(next[n.id]||[]).slice(0,6),joined=[...before,...row,...after],offset=before.length;
+  for(const x of temporalIssues(joined,p)){const ds=x.indices.map(i=>i-offset);if(ds.some(d=>d>=0&&d<D))add(x.type,`${n.name}: ${x.text} (ช่องวันที่ ${ds.map(d=>d+1).join(', ')})`,n.id,ds);}
+  if(nightMode(p)==='front')for(let d=0;d<=D;d++){
+   const leave=d===D?p.afterLeave?.[n.id]:requests[n.id]?.[d],prev=d===0?before.at(-1):row[d-1];
+   if((leave?.status==='approved'||(d<D&&row[d]==='VA')||(d===D&&after[0]==='VA'))&&(MASK[prev]&1))add('leave',`${n.name}: ดึกช่องวันที่ ${d} ทำงานเช้าวันที่ ${d+1} ทับวันหยุด/VA ที่อนุมัติ`,n.id,[d-1,d]);
+  }
+
+ }
+ for(let d=0;d<D;d++){
+  const day={};for(const [label,bit] of [['ด',1],['ช',2],['บ',4]]){
+   const all=nurses.filter(n=>(MASK[rows[n.id]?.[d]]||0)&bit),members=all.filter(n=>!isNovice(p,n)),novices=all.filter(n=>isNovice(p,n)),stroke=members.filter(n=>n.stroke),senior=members.filter(n=>levelOf(n)==='senior'),competent=members.filter(n=>levelOf(n)==='competent');const pairing=matchTeam(p,all);day[label]={count:members.length,stroke:stroke.length,senior:senior.length,competent:competent.length,novice:novices.length,pairs:pairing.pairs};
+   if(competent.length<competentNeed(p)[label])add('competent',`วันที่ ${d+1} เวร ${label}: Competent ${competent.length}/${competentNeed(p)[label]} คน (ขั้นต่ำ)`,null,[d]);
+   for(const x of pairing.unmatched)add('mentor',`วันที่ ${d+1} เวร ${label}: ${nurses.find(n=>n.id===x.noviceId)?.name} — ${x.reason}`,x.noviceId,[d]);
+   if((p.mentorMode||'none')!=='none'&&novices.length<noviceNeed(p)[label])for(const n of nurses.filter(n=>levelOf(n)==='novice'&&!all.some(x=>x.id===n.id))){const blocked=matchTeam(p,[...all,n]).unmatched.find(x=>x.noviceId===n.id);if(blocked){const leave=p.mentorMode==='fixed'&&n.mentorId&&requests[n.mentorId]?.[d]?.status==='approved';add('mentorAvailability',`วันที่ ${d+1} เวร ${label}: ยังเพิ่ม ${n.name} ไม่ได้ตามตารางปัจจุบัน — ${leave?'พี่เลี้ยงที่เลือกมีวันหยุดอนุมัติ':blocked.reason}`,null,[d]);}}
+   if(senior.length<seniorNeed(p)[label])add('senior',`วันที่ ${d+1} เวร ${label}: Senior ${senior.length}/${seniorNeed(p)[label]} คน (ขั้นต่ำ)`,null,[d]);
+   if(enabled(p,'novice')&&novices.length!==noviceNeed(p)[label])add('novice',`วันที่ ${d+1} เวร ${label}: Novice ${novices.length}/${noviceNeed(p)[label]} คน (แยกจากกำลังหลัก)`,null,[d]);
+   if(members.length!==demand(p)[label]){add('coverage',`วันที่ ${d+1} เวร ${label}: ${members.length}/${demand(p)[label]} คน`,null,[d]);for(const n of members)(bad[n.id]??={})[d]=true;}
+   if(stroke.length<skill(p)[label]){add('stroke',`วันที่ ${d+1} เวร ${label}: Stroke nurse ${stroke.length}/${skill(p)[label]} คน (ขั้นต่ำ)`,null,[d]);for(const n of stroke)(bad[n.id]??={})[d]=true;}
+  }coverage.push(day);
+ }
+ return {issues,bad,badDays,sums,coverage,valid:issues.length===0};
+}
+function rand(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};}
+function solveGroup(ns,target,p,reserved,timeMs,seed){
+ const start=Date.now(),rnd=rand(seed),D=p.D,N=ns.length; target=Array.isArray(target)?target:[target,target,target]; const totalTarget=target.reduce((a,b)=>a+b,0)+Object.values(noviceNeed(p)).reduce((a,b)=>a+b,0);
+ if(!N&&totalTarget===0)return {ok:true,rows:{}};
+ if(!N)return {ok:false,reason:'ไม่มีกำลังคนในกลุ่ม'};
+ const hist=ns.map(n=>(p.prior[n.id]||Array(6).fill(null)).slice(-7).map(c=>c===null||c===undefined||c===''?null:MASK[c]||0));
+ const historyLengths=hist.map(h=>h.length);
+ const shiftcounts=ns.map(()=>[0,0,0]);
+ const rows=ns.map(()=>[]),counts=ns.map(()=>0),workcounts=ns.map(()=>0),endtails=ns.map(n=>(p.next[n.id]||[]).slice(0,6));
+ const mins=ns.map(n=>Math.max(0,p.base-(p.vaCredit?Object.values(p.requests[n.id]||{}).filter(r=>r.status==='approved'&&r.type==='VA'&&r.work).length:0)));
+ const allowed=ns.map(n=>Array.from({length:D},(_,d)=>{
+  const req=p.requests[n.id]?.[d],lock=p.locks[n.id]?.[d];let values=allowedMasks(p);
+  if(req?.status==='approved')values=[0];
+  if(reserved[n.id]?.includes(d))values=[0];
+  if(lock!==undefined)values=values.filter(v=>v===(MASK[lock]||0));return values;
+ }));
+ const capacity=ns.map((n,i)=>Array.from({length:D+1},(_,d)=>allowed[i].slice(d).reduce((s,a)=>s+(p.minimum==='days'?(a.some(x=>x)?1:0):Math.max(0,...a.map(W))),0)));
+ if(mins.reduce((a,b)=>a+b,0)>totalTarget*D)return {ok:false,reason:'เวรที่ต้องให้ครบขั้นต่ำมากกว่าจำนวนเวรที่เปิด'};
+ let nodes=0,bestDepth=0;
+ function validMask(i,d,m){
+  const h=hist[i],idx=h.length,n=ns[i],t=[...h,m,...(d===D-1?endtails[i]:[])];
+  if(temporalIssues(t,p).some(x=>d===D-1?x.indices.some(j=>j>=historyLengths[i]&&j<=idx):x.indices.includes(idx)))return false;
+  if(nightMode(p)==='front'){
+   const nextReq=d+1===D?p.afterLeave?.[n.id]:p.requests[n.id]?.[d+1];
+   if((m&1)&&(nextReq?.status==='approved'||reserved[n.id]?.includes(d+1)||(d===D-1&&endtails[i][0]==='VA')))return false;
+   if((h.at(-1)&1)&&(p.requests[n.id]?.[d]?.status==='approved'||reserved[n.id]?.includes(d)))return false;
+  }
+  const val=p.minimum==='days'?workcounts[i]+(m?1:0):counts[i]+W(m);if(val+capacity[i][d+1]<mins[i])return false;
+
+  return true;
+ }
+ function dfs(d){
+  if(Date.now()-start>timeMs)return false;
+  if(d===D)return mins.every((min,i)=>(p.minimum==='days'?workcounts[i]:counts[i])>=min);
+  bestDepth=Math.max(bestDepth,d);nodes++;
+  const opts=ns.map((n,i)=>allowed[i][d].filter(m=>validMask(i,d,m)));if(opts.some(a=>!a.length))return false;
+  const order=Array.from({length:N},(_,i)=>i).sort((a,b)=>opts[a].length-opts[b].length),pick=Array(N),candidates=[];
+  const codes=['ด','ช','บ'],targets=[...target,...codes.map(c=>noviceNeed(p)[c]),...codes.map(c=>skill(p)[c]),...codes.map(c=>seniorNeed(p)[c]),...codes.map(c=>competentNeed(p)[c])];
+  const contributions=(i,m)=>Array.from({length:15},(_,j)=>{const bit=1<<(j%3),n=ns[i],nov=isNovice(p,n);return (m&bit)&&((j<3&&!nov)||(j>=3&&j<6&&nov)||(j>=6&&j<9&&!nov&&n.stroke)||(j>=9&&j<12&&!nov&&levelOf(n)==='senior')||(j>=12&&!nov&&levelOf(n)==='competent'))?1:0;});
+  const remaining=Array.from({length:N+1},()=>Array(15).fill(0));
+  for(let k=N-1;k>=0;k--)for(let j=0;j<15;j++)remaining[k][j]=remaining[k+1][j]+Math.max(0,...opts[order[k]].map(m=>contributions(order[k],m)[j]));
+  let comboNodes=0,timedOut=false;const actual=Array(15).fill(0);
+  function combos(k,score){
+   if(timedOut)return;
+   if((++comboNodes&127)===0&&Date.now()-start>timeMs){timedOut=true;return;}
+   if(actual.some((v,j)=>(j<6&&v>targets[j])||v+remaining[k][j]<targets[j]))return;
+   if(k===N){if(codes.some((code,j)=>matchTeam(p,ns.filter((n,i)=>pick[i]&(1<<j))).unmatched.length))return;candidates.push({m:pick.slice(),score:score+rnd()*2});if(candidates.length>256){candidates.sort((a,b)=>a.score-b.score);candidates.length=64;}return;}
+   const i=order[k],ideal=(d+1)*totalTarget/N;
+   for(const m of opts[i]){
+    pick[i]=m;const w=W(m),total=counts[i]+w,delta=contributions(i,m);let cost=(total-ideal)**2*.7+(w===2?.6:0);
+    for(let j=0;j<3;j++)cost+=(shiftcounts[i][j]+(m&(1<<j)?1:0)-total/3)**2;
+    for(let j=0;j<15;j++)actual[j]+=delta[j];combos(k+1,score+cost);for(let j=0;j<15;j++)actual[j]-=delta[j];
+   }
+  }combos(0,0);
+  candidates.sort((a,b)=>a.score-b.score);
+  for(const choice of candidates.slice(0,18)){
+   for(let i=0;i<N;i++){const m=choice.m[i];hist[i].push(m);rows[i].push(m);counts[i]+=W(m);workcounts[i]+=m?1:0;for(let b=0;b<3;b++)if(m&(1<<b))shiftcounts[i][b]++;}
+   if(dfs(d+1))return true;
+   for(let i=0;i<N;i++){const m=rows[i].pop();hist[i].pop();counts[i]-=W(m);workcounts[i]-=m?1:0;for(let b=0;b<3;b++)if(m&(1<<b))shiftcounts[i][b]--;}
+   if(Date.now()-start>timeMs)return false;
+  }return false;
+ }
+ const ok=dfs(0);return {ok,nodes,bestDepth,rows:ok?Object.fromEntries(ns.map((n,i)=>[n.id,rows[i].map((m,d)=>p.requests[n.id]?.[d]?.status==='approved'?p.requests[n.id][d].type:FROM[m])])):null};
+}
+function preflight(p){
+ const reasons=[],N=p.nurses.filter(n=>!isNovice(p,n)).length,S=p.nurses.filter(n=>!isNovice(p,n)&&n.stroke).length,t=demand(p),sk=skill(p),total=Object.values(t).reduce((a,b)=>a+b,0),st=Object.values(sk).reduce((a,b)=>a+b,0);
+ if(rollingEnabled(p)&&p.D>=7&&N*8<(total*7-(nightMode(p)==='front'&&p.D===7?t['ด']:0)))reasons.push(`กำลังคนไม่พอตามเพดาน 8 เวร/7 วัน: มี ${N} คน ต้องมีอย่างน้อย ${Math.ceil(total*7/8)} คน (ยังไม่รวมวันลาและรอยต่อ)`);
+ if(rollingEnabled(p)&&p.D>=7&&S*8<(st*7-(nightMode(p)==='front'&&p.D===7?sk['ด']:0)))reasons.push(`Stroke ไม่พอตามเพดาน: มี ${S} คน ต้องมีอย่างน้อย ${Math.ceil(st*7/8)} คน`);
+ for(let d=0;d<p.D;d++){
+ const available=p.nurses.filter(n=>!isNovice(p,n)&&p.requests[n.id]?.[d]?.status!=='approved');
+ for(const code of ['ช','บ','ด']){if(available.length<t[code])reasons.push(`วันที่ ${d+1} เวร ${code}: คนไม่ลา ${available.length}/${t[code]}`);if(available.filter(n=>n.stroke).length<sk[code])reasons.push(`วันที่ ${d+1} เวร ${code}: Stroke ไม่เพียงพอ`);}
+ if(available.length*2<total)reasons.push(`วันที่ ${d+1}: กำลังคนรองรับไม่ถึง ${total} เวร แม้ขึ้นเวรคู่`);
+ }
+ for(const c of ['ช','บ','ด']){if(p.nurses.filter(n=>!isNovice(p,n)&&levelOf(n)==='senior').length<seniorNeed(p)[c])reasons.push(`เวร ${c}: Senior ไม่พอตามจำนวนขั้นต่ำ`);if(p.nurses.filter(n=>isNovice(p,n)).length<noviceNeed(p)[c])reasons.push(`เวร ${c}: Novice ไม่พอตามเป้าหมายแยก`);if((p.mentorMode||'none')!=='none'&&noviceNeed(p)[c]>0&&demand(p)[c]===0)reasons.push(`เวร ${c}: เป้าหมาย Novice มี แต่ไม่มี RN กำลังหลักสำหรับขึ้นร่วมเวร`);}
+ for(const c of ['ช','บ','ด']){if(seniorNeed(p)[c]+competentNeed(p)[c]>demand(p)[c])reasons.push(`เวร ${c}: ขั้นต่ำ Senior + Competent เกิน RN รวม (สองระดับเป็นคนละคน)`);if(p.nurses.filter(n=>levelOf(n)==='competent').length<competentNeed(p)[c])reasons.push(`เวร ${c}: บุคลากรระดับ Competent ไม่เพียงพอ`);}
+ if((p.mentorMode||'none')!=='none')for(const n of p.nurses.filter(n=>levelOf(n)==='novice')){if(p.mentorMode==='fixed'&&n.mentorId&&!p.nurses.some(m=>m.id===n.mentorId&&mentorEligible(m)))reasons.push(`${n.name}: พี่เลี้ยงที่เลือกไม่ได้ร่วมจัดเดือนนี้หรือไม่มีสิทธิ์`);}
+ for(const n of p.nurses)for(const [d,code] of Object.entries(p.locks[n.id]||{})){
+  const req=p.requests[n.id]?.[d];if(req?.status==='approved'&&req.type!==code)reasons.push(`${n.name} วันที่ ${+d+1}: ช่องล็อกขัดกับวันลาที่อนุมัติ`);
+  if(code==='VA'&&!(req?.type==='VA'&&req.status==='approved'))reasons.push(`${n.name} วันที่ ${+d+1}: ล็อก VA ที่ยังไม่อนุมัติ`);
+ }
+ return [...new Set(reasons)];
+}
+function generateExact(p,progress=()=>{}){
+ p={requests:{},prior:{},next:{},locks:{},minimum:'units',...p};
+ const reasons=preflight(p);if(reasons.length)return {ok:false,reasons};
+ const output={},reserved={},report=[],seed=p.seed||Date.now();
+ for(const [gi,ns] of [p.nurses].entries()){
+  const target=['ด','ช','บ'].map(c=>demand(p)[c]);progress({message:'จัดเวร RN และบทบาทที่เลือก',percent:gi*40+5});
+  let result=null;for(let a=0;a<4;a++){result=solveGroup(ns,target,p,{},p.budget||1600,seed+a*731+gi);if(result.ok)break;}
+  if(!result?.ok)return {ok:false,reasons:[`${'บุคลากร'}: ยังหาตารางที่ผ่านครบไม่พบในเวลาที่กำหนด (ไม่ใช่ข้อพิสูจน์ว่าไม่มีคำตอบ) ตรวจ VA / ช่องล็อก / เวรเดือนข้างเคียง แล้วลองเพิ่มเวลาค้นหา` ]};
+  if(p.version===2){
+   const order=ns.slice().sort((a,b)=>summary(result.rows[a.id],p.base).maxoff-summary(result.rows[b.id],p.base).maxoff);
+   for(let ni=0;ni<order.length;ni++){
+    const n=order[ni],wanted=p.blockLength||4;progress({message:`หาช่วง OFF ให้ ${n.name}`,percent:gi*40+10+Math.round(ni/order.length*30)});
+    let found=false;
+    for(const len of (wanted===4?[4,3]:[3])){
+     const sum=summary(result.rows[n.id],p.base);if(sum.maxoff>=len){const block=sum.blocks.find(b=>b[1]-b[0]+1>=len);reserved[n.id]=Array.from({length:len},(_,i)=>block[0]-1+i);found=true;break;}
+     const starts=Array.from({length:p.D-len+1},(_,i)=>i).filter(d=>Array.from({length:len},(_,k)=>d+k).every(k=>!p.requests[n.id]?.[k]&&!p.locks[n.id]?.[k]));
+     starts.sort((a,b)=>{const cost=d=>Array.from({length:len},(_,k)=>W(MASK[result.rows[n.id][d+k]]||0)).reduce((x,y)=>x+y,0);return cost(a)-cost(b);});
+     for(const d of starts.slice(0,6)){
+      const trial={...reserved,[n.id]:Array.from({length:len},(_,i)=>d+i)};
+      const candidate=solveGroup(ns,target,p,trial,Math.max(180,(p.budget||1600)/5),seed+ni*971+d*53+len);
+      if(candidate.ok){result=candidate;Object.assign(reserved,trial);found=true;break;}
+     }if(found)break;
+    }
+    report.push({id:n.id,name:n.name,found});
+   }
+  }
+  Object.assign(output,result.rows);
+ }
+ const check=validate({...p,rows:output});if(!check.valid)return {ok:false,reasons:['ผลค้นหายังไม่ผ่านการตรวจซ้ำ จึงยังไม่แทนที่ตารางเดิม',...check.issues.slice(0,5).map(x=>x.message)]};
+ return {ok:true,rows:output,report,check};
+}
+// Partial search retains mandatory leave and locks; every new assignment is checked.
+function partial(p,progress){
+ const t=demand(p),sk=skill(p),rnd=rand(p.seed||Date.now());let best=null;
+ const hard=new Set(['leave','va','lock','transition','pair','repeat','rolling']);
+ const until=Date.now()+Math.max(500,p.budget||1600);
+ for(let attempt=0;attempt<20&&(!best||Date.now()<until);attempt++){
+ const rows=Object.fromEntries(p.nurses.map(n=>[n.id,Array.from({length:p.D},(_,d)=>p.locks[n.id]?.[d]??(p.requests[n.id]?.[d]?.status==='approved'?p.requests[n.id][d].type:'OFF'))]));
+ for(let d=0;d<p.D;d++){
+ for(const code of ['ด','ช','บ'].sort(()=>rnd()-.5)){
+ const bit=MASK[code];let members=()=>p.nurses.filter(n=>!isNovice(p,n)&&(MASK[rows[n.id][d]]&bit));
+ while(members().length<t[code]){
+ const needSkill=members().filter(n=>n.stroke).length<sk[code],needSenior=members().filter(n=>levelOf(n)==='senior').length<seniorNeed(p)[code],needCompetent=members().filter(n=>levelOf(n)==='competent').length<competentNeed(p)[code];
+ const options=p.nurses.filter(n=>!isNovice(p,n)&&!(MASK[rows[n.id][d]]&bit)&&p.locks[n.id]?.[d]===undefined&&p.requests[n.id]?.[d]?.status!=='approved').map(n=>({n,score:summary(rows[n.id],p.base).units+rnd()*4+(needSkill&&!n.stroke?1000:0)+(needSenior&&levelOf(n)!=='senior'?1000:0)+(needCompetent&&levelOf(n)!=='competent'?1000:0)+((p.mentorMode||'none')!=='none'&&!mentorEligible(n)?80:0)})).sort((a,b)=>a.score-b.score);
+ let placed=false;
+ for(const {n} of options){const old=rows[n.id][d],m=(MASK[old]||0)|bit;if(!allowedMasks(p).includes(m))continue;rows[n.id][d]=FROM[m];
+ const check=validate({...p,nurses:[n],rows});
+ if(check.issues.some(x=>hard.has(x.type)&&x.days.includes(d))){rows[n.id][d]=old;continue;}
+ placed=true;break;
+ }if(!placed)break;
+ }
+ if(true){let count=p.nurses.filter(n=>isNovice(p,n)&&(MASK[rows[n.id][d]]&bit)).length;
+ for(const n of p.nurses.filter(n=>isNovice(p,n)).sort((a,b)=>summary(rows[a.id],p.base).units-summary(rows[b.id],p.base).units)){
+ if(count>=noviceNeed(p)[code])break;if((MASK[rows[n.id][d]]&bit)||p.locks[n.id]?.[d]!==undefined||p.requests[n.id]?.[d]?.status==='approved')continue;
+ const old=rows[n.id][d],m=(MASK[old]||0)|bit;if(!allowedMasks(p).includes(m))continue;rows[n.id][d]=FROM[m];
+ if(validate({...p,nurses:[n],rows}).issues.some(x=>hard.has(x.type)&&x.days.includes(d)))rows[n.id][d]=old;else if(matchTeam(p,p.nurses.filter(x=>MASK[rows[x.id][d]]&bit)).unmatched.length)rows[n.id][d]=old;else count++;
+ }}
+ }
+ }
+ for(let d=0;d<p.D;d++)for(const bit of [1,2,4]){const pairing=matchTeam(p,p.nurses.filter(n=>MASK[rows[n.id][d]]&bit));for(const x of pairing.unmatched)if(p.locks[x.noviceId]?.[d]===undefined)rows[x.noviceId][d]=FROM[(MASK[rows[x.noviceId][d]]||0)&~bit];}
+ const check=validate({...p,rows}),missing=check.coverage.reduce((sum,c)=>sum+Object.keys(t).reduce((v,k)=>v+Math.max(0,t[k]-c[k].count)*10+Math.max(0,sk[k]-c[k].stroke)*5+Math.max(0,seniorNeed(p)[k]-c[k].senior)*5+Math.max(0,competentNeed(p)[k]-c[k].competent)*5+Math.max(0,noviceNeed(p)[k]-c[k].novice)*3,0),0),score=missing+check.issues.filter(x=>x.type==='minimum').length;
+ if(!best||score<best.score)best={rows,check,score};if(check.valid)break;
+ }
+ progress({message:'ตรวจตารางและตำแหน่งที่ยังขาด',percent:95});
+ return {ok:true,partial:!best.check.valid,rows:best.rows,check:best.check,report:[],reasons:[...preflight(p),'ผลค้นหาบางส่วน ไม่ใช่ข้อพิสูจน์ว่าไม่มีตารางครบ: ตรวจรายการที่ยังขาดและลองเพิ่มเวลาค้นหา']};
+}
+function generate(p,progress=()=>{}){
+ p={requests:{},prior:{},next:{},locks:{},minimum:'units',...p};
+ for(const c of ['ช','บ','ด'])if(!Number.isInteger(demand(p)[c])||demand(p)[c]<0||demand(p)[c]>100||!Number.isInteger(skill(p)[c])||skill(p)[c]<0||skill(p)[c]>demand(p)[c])return {ok:false,reasons:['จำนวนคนต้องเป็นจำนวนเต็ม 0–100 และ Stroke ต้องไม่เกินจำนวนคนในเวร']};
+ for(const c of ['ช','บ','ด'])if(!Number.isInteger(seniorNeed(p)[c])||seniorNeed(p)[c]<0||seniorNeed(p)[c]>demand(p)[c]||!Number.isInteger(noviceNeed(p)[c])||noviceNeed(p)[c]<0||noviceNeed(p)[c]>100)return {ok:false,reasons:['ตรวจจำนวน Senior และ Novice: ต้องเป็นจำนวนเต็ม และ Senior ไม่เกินกำลังหลัก']};
+ if(p.nightMode!==undefined&&!['front','back'].includes(p.nightMode))return {ok:false,reasons:['รูปแบบเวรดึกไม่ถูกต้อง']};
+ if(!['none','auto','fixed'].includes(p.mentorMode||'none')||((p.mentorMode||'none')!=='none'&&(!Number.isInteger(p.mentorCapacity??1)||(p.mentorCapacity??1)<1||(p.mentorCapacity??1)>20)))return {ok:false,reasons:['อัตราส่วนพี่เลี้ยงต้องเป็นจำนวนเต็ม 1–20']};
+ for(const c of ['ช','บ','ด'])if(!Number.isInteger(competentNeed(p)[c])||competentNeed(p)[c]<0||competentNeed(p)[c]>100)return {ok:false,reasons:['จำนวน Competent ต้องเป็นจำนวนเต็ม 0–100']};
+ if(p.partialOnly&&p.allowPartial){const result=partial(p,progress);result.reasons=[...new Set([...(p.failureReasons||[]),...result.reasons])];return result;}
+ const exact=generateExact(p,progress);if(exact.ok)return exact;
+ if(!p.allowPartial)return {ok:false,needsConfirmation:true,reasons:exact.reasons};
+ const result=partial(p,progress);result.reasons=[...new Set([...exact.reasons,...result.reasons])];return result;
+}
+root.RNCore={nightMode,activeCodes,temporalIssues,rollingEnabled,levelOf,mentorEligible,matchTeam,competentNeed,enabled,isNovice,seniorNeed,noviceNeed,demand,skill,CODES,MASK,W,FROM,days,key,weekday,holidays,calendar,summary,validate,generate,preflight,solveGroup};
+if(typeof module!=='undefined')module.exports=root.RNCore;
+})(typeof self!=='undefined'?self:globalThis);
+</script><script>'use strict';
+const C=RNCore,$=id=>document.getElementById(id),MONTHS=['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],DOW=['อา','จ','อ','พ','พฤ','ศ','ส'],KEY='ward_rn_planner_roles_v3';
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clone=v=>JSON.parse(JSON.stringify(v));
+const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+let role=null;
+const MOCK_KEY=KEY+'_mock';
+function isAdmin(){return role==='admin';}
+function requireAdmin(){if(isAdmin())return true;toast('กรุณา Login ด้วยบัญชี C7 เพื่อใช้สิทธิ์นี้');return false;}
+let state={schema:1,nurses:clone(INITIAL_NURSES),holidays:C.holidays(),overrides:{},requests:[],plans:{},settings:{nightMode:'back',useRolling:true,wardName:'หอผู้ป่วยในพิเศษรวมอายุรกรรมชาย C7 หน้า',useStroke:false,useSenior:false,useCompetent:false,useNovice:false,mentorMode:'none',mentorCapacity:1,competentNeed:{'ช':0,'บ':0,'ด':0},seniorNeed:{'ช':1,'บ':1,'ด':1},noviceNeed:{'ช':0,'บ':0,'ด':0},minimum:'units',vaCredit:false,rate:null,blockLength:4,budget:1600},selected:'2026-10'};
+let storageOK=true,loadError='';try{const old=localStorage.getItem(KEY);if(old){const parsed=JSON.parse(old);validateBackup(parsed);state=parsed;}}catch(e){storageOK=false;loadError='ไม่สามารถอ่านข้อมูลที่บันทึกไว้: '+e.message;}
+let version=location.hash==='#v2'?2:1,currentTab='roster',undo=[],worker=null,edit=null,lastValidation=null,toastTimer=null;
+function ym(){return state.selected.split('-').map(Number);}function planKey(v=version,selected=state.selected){return `${v}_${selected}`;}
+function plan(){const k=planKey();if(!state.plans[k])state.plans[k]={ids:state.nurses.filter(n=>n.active!==false).map(n=>n.id),rows:{},colors:{},notes:{},locks:{},prior:{},tail:{},monthlyNote:'',generatedAt:null};const p=state.plans[k],[y,m]=ym();for(const id of p.ids)if(!p.rows[id])p.rows[id]=Array(C.days(y,m)).fill('');return p;}
+function sortedNurses(){const rank={senior:0,competent:1,novice:2,rn:3};return state.nurses.slice().sort((a,b)=>rank[C.levelOf(a)]-rank[C.levelOf(b)]);}
+function people(){const ids=new Set(plan().ids);return sortedNurses().filter(n=>ids.has(n.id));}function cal(){const [y,m]=ym();return C.calendar(y,m,state.holidays,state.overrides);}
+function neighbor(side){const [y,m]=ym(),dt=new Date(Date.UTC(y,m-1+(side==='prior'?-1:1),1));return `${dt.getUTCFullYear()}-${String(dt.getUTCMonth()+1).padStart(2,'0')}`;}
+function boundary(side,includeLast=true){const p=plan(),other=state.plans[planKey(version,neighbor(side))],out={};for(const n of people()){const auto=other?.rows?.[n.id];const fallback=auto?(side==='prior'?auto.slice(-6):auto.slice(0,6)):Array(6).fill(null);out[n.id]=Array.from({length:6},(_,i)=>p[side][n.id]?.[i]!==undefined?p[side][n.id][i]:(fallback[i]||null));if(side==='prior'&&includeLast&&Object.prototype.hasOwnProperty.call(p.priorLast||{},n.id))out[n.id][5]=p.priorLast[n.id];}return out;}
+
+let boundaryEdit=null;
+function priorDate(){const [y,m]=ym(),dt=new Date(Date.UTC(y,m-1,0));return {day:dt.getUTCDate(),month:dt.getUTCMonth()+1,year:dt.getUTCFullYear()};}
+function priorDateText(){const d=priorDate();return `${d.day}/${d.month}/${d.year+543}`;}
+function priorInfo(id){
+ const p=plan(),manual=Object.prototype.hasOwnProperty.call(p.priorLast||{},id),code=boundary('prior')[id]?.[5]??null;
+ const source=manual?'กำหนดเอง':p.prior[id]?.[5]!==undefined?'ข้อมูลย้อนหลัง':code?'จากเดือนก่อน':'ยังไม่ทราบ';
+ return {code,source,manual};
+}
+function openBoundary(id){
+ if(worker)return toast('หยุดค้นหาก่อนแก้เวรรอยต่อ');
+ const n=people().find(n=>n.id===id);if(!n)return;
+ const info=priorInfo(id),base=boundary('prior',false)[id][5],d=priorDate();
+ boundaryEdit={id,key:planKey()};
+ $('boundaryPerson').textContent=n.name;
+ $('boundaryDate').textContent=`เวรวันที่ ${d.day} ${MONTHS[d.month-1]} ${d.year+543} · วันสุดท้ายของเดือนก่อน`;
+ $('boundaryScope').textContent=`ใช้กับตาราง ${MONTHS[ym()[1]-1]} ${ym()[0]+543} · หน้า ${version}`;
+ const labels={'ช':'ช — เช้า','บ':'บ — บ่าย','ด':'ด — ดึก','ช/บ':'ช/บ — เช้าและบ่าย','ด/บ':'ด/บ — ดึกและบ่าย','OFF':'OFF — หยุด','VA':'VA — ลาพักร้อน'};
+ $('boundaryShift').innerHTML=`<option value="inherit">ใช้ข้อมูลย้อนหลังเดิม / เดือนก่อน (${esc(base||'?')})</option><option value="?">? — ยังไม่ทราบ</option>`+C.CODES.map(c=>`<option value="${esc(c)}">${esc(labels[c]||c)}</option>`).join('');
+ $('boundaryShift').value=info.manual?(info.code||'?'):'inherit';
+ updateBoundaryHint();$('boundaryDialog').showModal();
+}
+function updateBoundaryHint(){
+ if(!boundaryEdit)return;
+ const selected=$('boundaryShift').value,code=selected==='inherit'?boundary('prior',false)[boundaryEdit.id]?.[5]:selected==='?'?null:selected;
+ const front=C.nightMode(state.settings)==='front';
+ const hint=!code?'ยังไม่ทราบเวรวันสุดท้าย ระบบยังตรวจการต่อเวรจากวันนั้นไม่ได้':front?(C.MASK[code]&1?'โย้หน้า: ด ในช่องวันสุดท้ายทำงานเช้าวันที่ 1 ของเดือนใหม่ จึงห้าม ช วันที่ 1 และต้องไม่ทับวันลา':'โย้หน้า: ระบบตรวจเวรตามเวลาจริง บ กับ ด ในช่องเดียวกันจะผิดกฎ'):(C.MASK[code]&4)?'โย้หลัง: มี บ วันสุดท้าย จึงห้าม ด หรือ ด/บ วันที่ 1 ของเดือนใหม่':'ระบบจะใช้เวรนี้ตรวจการต่อเวร เวรซ้ำ และจำนวนเวรรวมข้ามเดือนตามข้อมูลย้อนหลังที่มี';
+ $('boundaryHint').textContent=hint;
+ $('boundaryHint').className='notice'+(!code?' warn':'');
+ const before=extendedPrior()[boundaryEdit.id].slice();before[before.length-1]=code;
+ $('boundaryKnown').textContent=`มีข้อมูลย้อนหลัง ${before.filter(c=>c!==null).length}/${before.length} ช่อง · หากกรอกเพียงวันสุดท้าย จะยังตรวจเกณฑ์ 8 เวรใน 7 วันข้ามเดือนได้ไม่ครบ`;
+}
+function applyBoundary(generate=false){
+ if(!boundaryEdit||boundaryEdit.key!==planKey()){toast('เดือนหรือเวอร์ชันเปลี่ยนแล้ว กรุณาเปิดเวรรอยต่อใหม่');$('boundaryDialog').close();return;}
+ if(worker)return toast('หยุดค้นหาก่อนแก้เวรรอยต่อ');
+ const value=$('boundaryShift').value;if(!['inherit','?',...C.CODES].includes(value))return;
+ snapshot();const p=plan(),id=boundaryEdit.id;
+ if(value==='inherit'){if(p.priorLast)delete p.priorLast[id];}
+ else (p.priorLast??={})[id]=value==='?'?null:value;
+ $('boundaryDialog').close();changed();
+ if(generate)startGeneration();else toast('บันทึกเวรรอยต่อและตรวจตารางแล้ว กดสร้างตารางเพื่อจัดเวรใหม่');
+}
+
+function extendedPrior(){const base=boundary('prior'),other=state.plans[planKey(version,neighbor('prior'))],p=plan();if(C.nightMode(state.settings)!=='front')return base;return Object.fromEntries(people().map(n=>[n.id,[p.priorExtra?.[n.id]!==undefined?p.priorExtra[n.id]:(other?.rows?.[n.id]?.at(-7)||null),...base[n.id]]]));}
+function params(){const p=plan(),calendar=cal(),req={};for(const r of state.requests){if(r.status!=='approved')continue;for(const day of calendar.rows){if(day.date>=r.start&&day.date<=r.end)(req[r.id]??={})[day.day-1]={type:r.type,status:r.status,work:day.work};}}const afterLeave={};const nextDay=shiftDate(calendar.rows.at(-1).date,1);for(const r of state.requests)if(r.status==='approved'&&r.start<=nextDay&&r.end>=nextDay)afterLeave[r.id]=r;return {afterLeave,nurses:people(),D:calendar.rows.length,base:calendar.workdays,rows:p.rows,requests:req,prior:extendedPrior(),next:boundary('tail'),locks:p.locks,version,...state.settings};}
+function snapshot(){undo.push(clone(state));if(undo.length>25)undo.shift();}
+function save(show=false){try{localStorage.setItem(KEY,JSON.stringify(state));storageOK=true;$('saveState').textContent='บันทึกแล้ว '+new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'});if(show){localStorage.setItem(MOCK_KEY,JSON.stringify({savedAt:new Date().toISOString(),savedBy:isAdmin()?'C7':'Guest',data:clone(state)}));toast('บันทึกข้อมูลและ mock data ล่าสุดแล้ว');}}catch(e){storageOK=false;$('saveState').textContent='บันทึกไม่ได้ — กรุณาสำรองไฟล์';if(show)toast('บันทึกข้อมูลหรือ mock data ไม่สำเร็จ กรุณากดสำรองไฟล์');}}
+function changed(){save();render();}
+function toast(text){$('toast').textContent=text;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),4200);}
+function message(text,type='error'){$('messageBox').className=`notice ${type}`;$('messageBox').textContent=text;}
+function goTab(tab){currentTab=tab;for(const b of document.querySelectorAll('[data-tab]'))b.classList.toggle('active',b.dataset.tab===tab);for(const p of document.querySelectorAll('section.panel'))p.classList.toggle('hidden',p.id!=='panel-'+tab);}
+function nightDescription(mode=C.nightMode(state.settings)){return mode==='front'?'ดึกโย้หน้า: ดึกวันที่ 6 ไปคืนวันที่ 6 ทำงาน 00:01–08:00 วันที่ 7':'ดึกโย้หลัง: ดึกวันที่ 6 ไปคืนวันที่ 5 ทำงาน 00:01–08:00 วันที่ 6';}
+function updateNightHint(){$('nightModeHint').textContent=nightDescription($('nightMode').value)+' • ใช้รูปแบบเดียวกันทุกเดือนและข้อมูลรอยต่อ • เวรรวม/OT/วัน OFF สรุปตามช่องตาราง แต่กฎเวรต่อเนื่องและ 7 วันตรวจตามวันทำงานจริง • เวรดึกยังนับ 8 ชั่วโมงตามระบบเดิม';}
+function actualNightDate(d){const [y,m]=ym();return new Date(Date.UTC(y,m-1,d+1+(C.nightMode(state.settings)==='front'?1:0))).toISOString().slice(0,10);}
+function wardName(){return state.settings.wardName||'หอผู้ป่วยในพิเศษรวมอายุรกรรมชาย C7 หน้า';}
+function exportBase(){return 'RN_'+wardName().replace(/[\\/:*?"<>|]/g,'_');}
+const LEVELS={rn:'RN · ยังไม่ระบุระดับ',novice:'Novice',competent:'Competent',senior:'Senior'};
+function roleText(n){return [LEVELS[C.levelOf(n)],n.stroke?'Stroke':'',C.mentorEligible(n)?'พี่เลี้ยง':''].filter(Boolean).join(' / ');}
+function mentorLines(v=lastValidation){const ns=people();return v.coverage.flatMap((day,d)=>['ช','บ','ด'].flatMap(c=>(day[c].pairs||[]).map(x=>`วันที่ ${d+1} เวร ${c}${c==='ด'?' (ทำงานเช้า '+actualNightDate(d)+')':''}: ${ns.find(n=>n.id===x.noviceId)?.name||x.noviceId} → ${ns.find(n=>n.id===x.mentorId)?.name||x.mentorId}`)));}
+function renderMentors(v){const lines=mentorLines(v),issues=v.issues.filter(x=>['mentor','mentorAvailability'].includes(x.type));$('mentorReport').innerHTML=(state.settings.mentorMode||'none')==='none'?'<p class="help">ไม่ได้เปิดบังคับพี่เลี้ยง คู่ที่เลือกไว้จะยังไม่ถูกนำมาตรวจตาราง</p>':(lines.length?'<table class="plain-table"><thead><tr><th>Novice → พี่เลี้ยง (ตามเวรที่ขึ้นจริง)</th></tr></thead><tbody>'+lines.map(x=>'<tr><td>'+esc(x)+'</td></tr>').join('')+'</tbody></table>':'<p class="help">ยังไม่มีคู่ที่จัดได้ในตาราง</p>')+issues.map(x=>'<p class="danger">'+esc(x.message)+'</p>').join('');}
+function mentorVisibility(){const off=$('mentorMode').value==='none';$('mentorCapacityField').classList.toggle('hidden',off);$('mentorCapacity').disabled=off;$('mentorCapacity').required=!off;}
+function featureVisibility(){for(const k of ['Stroke','Senior','Competent','Novice'])document.querySelectorAll('[data-feature="'+k.toLowerCase()+'"]').forEach(el=>{el.hidden=!$('use'+k).checked;el.style.display=el.hidden?'none':'';el.querySelectorAll('input').forEach(i=>i.disabled=el.hidden);});}
+function render(){
+ renderAccount();$('nightBadge').textContent=(C.nightMode(state.settings)==='front'?'ดึกโย้หน้า':'ดึกโย้หลัง')+' · 8 ชั่วโมง / เวร';$('nightLegend').textContent=nightDescription();$('doubleLegend').textContent=C.nightMode(state.settings)==='front'?'ช/บ · ช/ด = 2 เวร':'ช/บ · ด/บ = 2 เวร';$('brandWard').textContent=wardName();$('wardSubtitle').textContent=wardName();document.title=wardName()+' · ตารางเวร RN';
+ const [y,m]=ym(),calendar=cal(),p=plan(),ns=people(),par=params();lastValidation=C.validate(par);const v=lastValidation,units=ns.filter(n=>!C.isNovice(par,n)).reduce((s,n)=>s+v.sums[n.id].units,0),ot=Object.values(v.sums).reduce((s,x)=>s+x.ot,0);
+ $('month').value=m;$('year').value=y;$('v1Link').classList.toggle('active',version===1);$('v2Link').classList.toggle('active',version===2);$('pageTitle').textContent=version===1?'ตารางเวร RN':'ตารางเวร RN · หยุดต่อเนื่อง';$('v2Info').classList.toggle('hidden',version!==2);
+ $('stats').innerHTML=`<div class="stat"><div class="label">RN ในตาราง</div><strong>${ns.filter(n=>!C.isNovice(par,n)).length}</strong><small>กำลังหลัก${C.enabled(par,'novice')?' · Novice '+ns.filter(n=>C.isNovice(par,n)).length:''}</small></div><div class="stat"><div class="label">วันทำการเดือนนี้${y===2027?' · ฐานวางแผน':''}</div><strong>${calendar.workdays}</strong><small>วัน / ${calendar.workdays*8} ชม.</small></div><div class="stat"><div class="label">เวรรวม / ที่ต้องใช้</div><strong>${units}</strong><small>/ ${calendar.rows.length*Object.values(C.demand(par)).reduce((a,b)=>a+b,0)} เวร</small></div><div class="stat"><div class="label">OT รวมโดยประมาณ</div><strong>${ot}</strong><small>เวร · ${ot*8} ชม.</small></div>`;
+ $('tableTitle').textContent=wardName()+' · '+MONTHS[m-1]+' '+(y+543);$('monthlyNote').value=p.monthlyNote;renderRemarks();$('undoBtn').disabled=!undo.length;
+ const isBlank=ns.every(n=>p.rows[n.id].every(c=>!c));const boundaryMissing=Object.values(par.prior).some(a=>a.some(v=>!v))||Object.values(par.next).some(a=>a.some(v=>!v));
+ $('resultBanner').innerHTML=isBlank?'<div class="notice">พร้อมจัดเวร — กรอก VA และตรวจรอยต่อเดือนก่อนกดสร้างตาราง</div>':`<div class="notice ${v.valid?'':'error'}"><strong>${v.valid?'ผ่านเงื่อนไขภายในข้อมูลที่มี':'พบ '+v.issues.length+' รายการที่ต้องแก้'}</strong>${v.valid?'ผ่านจำนวนคนตามการตั้งค่าวอร์ด': 'ตัวแดงคือช่องที่เกี่ยวข้อง คลิกเมนูตรวจเงื่อนไขเพื่อดูเหตุผล'}${v.valid&&boundaryMissing?' · ยังรับรองรอยต่อเดือนทั้งหมดไม่ได้':''}</div>`;
+ $('historyWarning').textContent=boundaryMissing?'⚠ เวรเดือนข้างเคียงยังไม่ครบ: ผลตรวจข้ามเดือนครอบคลุมเฉพาะช่วงที่ทราบข้อมูล กำหนดวันสุดท้ายที่ช่อง “เวรรอยต่อ” หลังชื่อ หรือกรอกย้อนหลังครบในเมนู “กฎ / รอยต่อเดือน”':'มีข้อมูลเวรรอยต่อที่จำเป็นก่อนและหลังเดือนนี้ครบแล้ว';
+ renderShiftDashboard(calendar,v);renderRoster(calendar,v);renderPeople();renderLeave();renderCalendar(calendar,v);renderSettings();renderChecks(v);renderMentors(v);
+ $('printNotes').textContent=`V${version} | วันทำการ ${calendar.workdays} | ${v.valid?'ผ่านกฎที่ตรวจได้':'ยังมีข้อผิดเงื่อนไข '+v.issues.length+' รายการ'}${boundaryMissing?' | ข้อมูลรอยต่อเดือนไม่ครบ':''} | หมายเหตุ: ${p.monthlyNote}`;
+ if(!storageOK)$('saveState').textContent='บันทึกไม่ได้ — สำรอง JSON';
+}
+function renderShiftDashboard(calendar,v){
+ const [y,m]=ym(),ns=people(),target=calendar.rows.length*3;
+ const shifts=[['ช','เช้า','08:00–16:00','morning'],['บ','บ่าย','16:00–24:00','evening'],['ด','ดึก',C.nightMode(params())==='front'?'00:01–08:00 วันถัดไป':'00:01–08:00 วันที่เขียน','night']];
+ const totals=Object.fromEntries(shifts.map(([code])=>[code,ns.filter(n=>!C.isNovice(params(),n)).reduce((sum,n)=>sum+v.sums[n.id].shifts[code],0)]));
+ $('shiftDashboardPeriod').textContent=`${MONTHS[m-1]} ${y+543} · เวอร์ชัน ${version} · บุคลากรที่ร่วมจัด ${ns.length} คน`;
+ $('shiftCards').innerHTML=shifts.map(([code,label,time,cls])=>`<div class="shift-card ${cls}"><span>เวร${label} (${code})</span><strong>${totals[code]} <span style="font-size:14px;font-weight:normal">เวร</span></strong><small>${time}</small><small>เป้าหมายกำลังหลัก ${calendar.rows.length*C.demand(params())[code]} เวร · ${calendar.rows.length} วัน × ${C.demand(params())[code]} คน</small>${C.enabled(params(),'novice')?`<small>Novice แยก ${v.coverage.reduce((sum,c)=>sum+c[code].novice,0)} / ${calendar.rows.length*C.noviceNeed(params())[code]} เวร</small>`:''}</div>`).join('');
+ $('shiftPersonTable').innerHTML='<table class="plain-table"><caption>ยอดตามตารางปัจจุบัน รวมช่องที่ยังผิดเงื่อนไขด้วย</caption><thead><tr><th>พยาบาล</th><th>เช้า</th><th>บ่าย</th><th>ดึก</th><th>รวมเวร</th></tr></thead><tbody>'+ns.map(n=>{const s=v.sums[n.id];return `<tr><td>${esc(n.name)}${roleText(n)?' <span class="pill">'+esc(roleText(n))+'</span>':''}</td><td>${s.shifts['ช']}</td><td>${s.shifts['บ']}</td><td>${s.shifts['ด']}</td><td>${s.units}</td></tr>`;}).join('')+`</tbody><tfoot><tr><th>รวมกำลังหลัก</th><th>${totals['ช']}</th><th>${totals['บ']}</th><th>${totals['ด']}</th><th>${totals['ช']+totals['บ']+totals['ด']}</th></tr></tfoot></table>`;
+}
+function renderRoster(calendar,v){
+ const p=plan(),ns=people(),D=calendar.rows.length,prior=boundary('prior'),priorLabel=priorDateText();
+ let h=`<table class="roster"><thead><tr><th class="name">พยาบาลวิชาชีพ</th><th class="boundary-col">เวรรอยต่อ<br>${priorLabel}<br><small>เดือนก่อน</small></th>`;
+ for(const d of calendar.rows)h+=`<th class="${[0,6].includes(d.weekday)?'weekend ':''}${d.holiday?'holiday ':''}${v.badDays[d.day-1]?'problem-day':''}" title="${esc(d.holiday||d.date)}">${d.day}<br>${DOW[d.weekday]}</th>`;
+ h+='<th>รวม<br>เวร</th><th>วัน<br>ขึ้นงาน</th><th>VA</th><th>OFF</th><th>OT<br>เวร</th><th>เช้า</th><th>บ่าย</th><th>ดึก</th></tr></thead><tbody>';
+ for(let i=0;i<ns.length;i++){const n=ns[i],s=v.sums[n.id];h+=`<tr><td class="name"><span class="rn-name"><span class="index">${String(i+1).padStart(2,'0')}</span>${esc(n.name)}</span>${roleText(n)?'<span class="tag">'+esc(roleText(n))+'</span>':''}</td><td class="boundary-col"><button class="boundary-button ${prior[n.id][5]?'has-value':''}" data-prior-person="${esc(n.id)}" aria-label="กำหนดเวรรอยต่อ ${esc(n.name)} วันที่ ${priorLabel}" title="${esc(n.name+' · '+priorLabel+' · '+priorInfo(n.id).source)}"><strong>${esc(prior[n.id][5]||'?')}</strong><span class="no-print">${prior[n.id][5]?'แก้ไข':'กำหนด'}</span></button><small class="boundary-source no-print">${esc(priorInfo(n.id).source)}</small></td>`;
+  for(let d=0;d<D;d++){const code=p.rows[n.id]?.[d]||'',color=p.colors[n.id]?.[d]||'',note=p.notes[n.id]?.[d]||'',bad=v.bad[n.id]?.[d],locked=p.locks[n.id]?.[d]!==undefined,cls=code==='OFF'?'off':code==='VA'?'va':code.includes('ช')?'ch':code==='บ'?'bai':'night';h+=`<td class="${bad?'problem-cell':''}" style="${color?'background:'+color:''}"><button style="${color?'background:'+color+'!important':''}" class="cell ${cls} ${bad?'bad':''}" data-cell="${esc(n.id)}:${d}" title="${esc(n.name+' · วันที่ '+(d+1)+' · '+(code||'ว่าง')+((C.MASK[code]||0)&1?' · ดึกทำงานจริง '+actualNightDate(d)+' 00:01–08:00':'')+(note?' · '+note:'')+(locked?' · ล็อก':'')+(bad?' · มีข้อผิดเงื่อนไข':''))}">${esc(code||'·')}${note?'<span class="dot">●</span>':''}${locked?'<span class="lock">◆</span>':''}</button></td>`;}
+  h+=`<td class="sum">${s.units}</td><td class="sum">${s.worked}</td><td class="sum">${s.va}</td><td class="sum">${s.off}</td><td class="sum">${s.ot}</td><td class="sum">${s.shifts['ช']}</td><td class="sum">${s.shifts['บ']}</td><td class="sum">${s.shifts['ด']}</td></tr>`;
+ }h+='</tbody><tfoot>';
+ for(const shift of ['ด','ช','บ'])h+=`<tr><td class="name">${shift} · จำนวน RN / ${C.demand(params())[shift]}</td><td class="boundary-col"></td>${v.coverage.map(c=>`<td class="${c[shift].count===C.demand(params())[shift]?'good-number':'bad-number shortage-cell'}">${c[shift].count}</td>`).join('')}<td colspan="8"></td></tr>`;
+ if(C.enabled(params(),'stroke'))for(const shift of ['ด','ช','บ'])h+=`<tr><td class="name">${shift} · Stroke ขั้นต่ำ / ${C.skill(params())[shift]}</td><td class="boundary-col"></td>${v.coverage.map(c=>`<td class="${c[shift].stroke>=C.skill(params())[shift]?'good-number':'bad-number shortage-cell'}">${c[shift].stroke}</td>`).join('')}<td colspan="8"></td></tr>`;
+ for(const [role,label,needs] of [['competent','Competent ขั้นต่ำ',C.competentNeed(params())],['senior','Senior ขั้นต่ำ',C.seniorNeed(params())],['novice','Novice แยก',C.noviceNeed(params())]])if(C.enabled(params(),role))for(const code of ['ช','บ','ด'])h+=`<tr><td class="name">${code} · ${label} / ${needs[code]}</td><td></td>${v.coverage.map(c=>`<td class="${c[code][role]>=needs[code]?'good-number':'bad-number shortage-cell'}">${c[code][role]}</td>`).join('')}<td colspan="8"></td></tr>`;
+ for(const shift of ['ช','บ','ด'])h+=`<tr><td class="name">${shift} · ตำแหน่งว่างที่ยังขาด</td><td></td>${v.coverage.map(c=>`<td class="${c[shift].count<C.demand(params())[shift]?'shortage-cell':''}">${Math.max(0,C.demand(params())[shift]-c[shift].count)?'ขาด '+Math.max(0,C.demand(params())[shift]-c[shift].count)+' คน':'—'}</td>`).join('')}<td colspan="8"></td></tr>`;
+ h+='</tfoot></table>';$('rosterWrap').innerHTML=h;
+}
+function renderPeople(){const p=plan();$('peopleList').innerHTML='<table class="plain-table"><thead><tr><th>รายชื่อ / ประเภท</th><th>ระดับ</th><th>Stroke</th><th>เป็นพี่เลี้ยงได้</th><th>พี่เลี้ยงที่เลือกให้ Novice</th><th>ร่วมจัดเดือนนี้</th><th>จัดการ</th></tr></thead><tbody>'+sortedNurses().map(n=>{
+ const level=C.levelOf(n),mentors=sortedNurses().filter(m=>m.id!==n.id&&C.mentorEligible(m)),invalid=n.mentorId&&!mentors.some(m=>m.id===n.mentorId);
+ return `<tr><td>${esc(n.name)} <span class="staff-badge">RN</span></td><td><select class="level-select" data-level="${n.id}" aria-label="ระดับ ${esc(n.name)}">${Object.entries(LEVELS).map(([v,l])=>`<option value="${v}" ${v===level?'selected':''}>${l}</option>`).join('')}</select></td><td><input type="checkbox" data-role="stroke" data-person="${n.id}" ${n.stroke?'checked':''} aria-label="Stroke ${esc(n.name)}"></td><td><input type="checkbox" data-role="mentor" data-person="${n.id}" ${n.mentor?'checked':''} ${level==='novice'?'disabled':''} aria-label="พี่เลี้ยง ${esc(n.name)}"></td><td><select class="mentor-select" data-mentor-for="${n.id}" ${level!=='novice'?'disabled':''} aria-label="คู่พี่เลี้ยง ${esc(n.name)}"><option value="">ไม่ระบุคู่ (อัตโนมัติเมื่อเปิดบังคับ)</option>${invalid?`<option value="${esc(n.mentorId)}" selected>คู่เดิมใช้ไม่ได้ — กรุณาเลือกใหม่</option>`:''}${mentors.map(m=>`<option value="${m.id}" ${m.id===n.mentorId?'selected':''}>${esc(m.name)}${p.ids.includes(m.id)?'':' (ไม่ได้ร่วมจัดเดือนนี้)'}</option>`).join('')}</select></td><td><input type="checkbox" data-active="${n.id}" ${p.ids.includes(n.id)?'checked':''} aria-label="ร่วมจัด ${esc(n.name)}"></td><td><button data-rename="${n.id}">แก้ชื่อ</button> <button class="danger" data-delete-person="${n.id}">ลบ</button></td></tr>`;}).join('')+'</tbody></table>';
+ const selected=$('leavePerson').value;$('leavePerson').innerHTML=sortedNurses().map(n=>`<option value="${esc(n.id)}">${esc(n.name)}</option>`).join('');if(selected)$('leavePerson').value=selected;
+}
+function renderLeave(){const [y,m]=ym(),first=C.key(y,m,1),last=C.key(y,m,C.days(y,m)),rows=state.requests.filter(r=>r.start<=last&&r.end>=first);$('leaveList').innerHTML='<h3>คำขอที่ครอบคลุมเดือนนี้</h3>'+(rows.length?'<table class="plain-table"><thead><tr><th>RN</th><th>ประเภท / วันที่</th><th>ยื่นเมื่อ</th><th>สถานะ</th><th>หมายเหตุ</th><th></th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${esc(state.nurses.find(n=>n.id===r.id)?.name)}</td><td>${r.type}<br>${r.start} → ${r.end}</td><td>${r.requested}</td><td><select data-request="${r.uid}" ${isAdmin()?'':'disabled'} aria-label="สถานะคำขอ">${[['pending','รออนุมัติ'],['approved','อนุมัติ'],['rejected','ไม่อนุมัติ']].map(([v,l])=>`<option value="${v}" ${v===r.status?'selected':''}>${l}</option>`).join('')}</select></td><td>${esc(r.note)}</td><td><button data-delete-request="${r.uid}" ${!isAdmin()&&r.status!=='pending'?'disabled':''}>ลบ</button></td></tr>`).join('')+'</tbody></table>':'<p class="muted">ยังไม่มีคำขอในเดือนนี้</p>');}
+function renderCalendar(calendar,v){
+ const [y,m]=ym();$('calYear').textContent=y+543;$('yearCards').innerHTML=MONTHS.map((name,i)=>`<div class="year-card">${name}<strong>${C.calendar(y,i+1,state.holidays,state.overrides).workdays}</strong>วันทำการ</div>`).join('');
+ $('calMonth').innerHTML=DOW.map(d=>`<span class="muted" style="text-align:center">${d}</span>`).join('')+'<span></span>'.repeat(calendar.rows[0].weekday)+calendar.rows.map(d=>`<button data-calendar="${d.date}" class="${d.work?'':'nonwork'}" title="${esc(d.holiday||'')} ${d.work?'วันทำการ':'วันหยุด'}">${d.day}</button>`).join('');
+ $('otRate').value=state.settings.rate??'';$('vaCredit').checked=state.settings.vaCredit;
+ $('holidayList').innerHTML='<table class="plain-table"><thead><tr><th>ใช้</th><th>วันที่</th><th>วันหยุด</th><th>สถานะฐานข้อมูล</th></tr></thead><tbody>'+state.holidays.map((h,i)=>h.date.startsWith(String(y))?`<tr><td><input type="checkbox" data-holiday="${i}" ${h.enabled?'checked':''} aria-label="ใช้ ${esc(h.name)} ${h.date}"></td><td>${h.date}</td><td>${esc(h.name)}</td><td>${esc(h.status)}</td></tr>`:'').join('')+'</tbody></table>';
+ $('otTable').innerHTML='<h2>สรุป OT รายคน</h2><table class="plain-table"><thead><tr><th>RN</th><th>เวรรวม</th><th>ชั่วโมง</th><th>OT เวร</th><th>OT ชั่วโมง</th><th>ค่าตอบแทนประมาณการ</th></tr></thead><tbody>'+people().map(n=>{const s=v.sums[n.id];return `<tr><td>${esc(n.name)}</td><td>${s.units}</td><td>${s.hours}</td><td>${s.ot}</td><td>${s.otHours}</td><td>${s.money===null?'ยังไม่ระบุอัตรา':s.money.toLocaleString('th-TH',{minimumFractionDigits:2})+' บาท'}</td></tr>`;}).join('')+'</tbody></table>';
+}
+function renderSettings(){
+ const front=C.nightMode(state.settings)==='front';$('priorExtraBox').classList.toggle('hidden',!front);if(front){const data=extendedPrior(),[y,m]=ym(),dt=new Date(Date.UTC(y,m-1,-6));$('priorExtraTable').innerHTML='<table class="plain-table"><thead><tr><th>RN</th><th>ย้อนหลังช่องที่ 7 · '+dt.getUTCDate()+'/'+(dt.getUTCMonth()+1)+'</th></tr></thead><tbody>'+people().map(n=>`<tr><td>${esc(n.name)}</td><td><select data-prior-extra="${n.id}" aria-label="ย้อนหลังช่องที่ 7 ${esc(n.name)}"><option value="?">?</option>${C.CODES.map(c=>`<option value="${c}" ${data[n.id][0]===c?'selected':''}>${c}</option>`).join('')}</select></td></tr>`).join('')+'</tbody></table>';}
+
+ const pp=params();$('nightMode').value=C.nightMode(pp);updateNightHint();$('useRolling').checked=C.rollingEnabled(pp);$('mentorMode').value=pp.mentorMode||'none';$('mentorCapacity').value=pp.mentorCapacity||1;mentorVisibility();$('wardName').value=wardName();for(const k of ['Stroke','Senior','Competent','Novice'])$('use'+k).checked=C.enabled(pp,k.toLowerCase());featureVisibility();for(const c of ['ช','บ','ด']){$('need'+c).value=C.demand(pp)[c];$('skill'+c).value=(pp.skill||{'ช':1,'บ':1,'ด':1})[c];$('senior'+c).value=(pp.seniorNeed||{'ช':1,'บ':1,'ด':1})[c];$('competent'+c).value=(pp.competentNeed||{'ช':0,'บ':0,'ด':0})[c];$('novice'+c).value=(pp.noviceNeed||{'ช':0,'บ':0,'ด':0})[c];}
+ const warnings=C.preflight(pp);$('capacityInfo').textContent=warnings.length?'⚠ '+warnings.join(' · '):'ผ่านการตรวจจำนวนคนเบื้องต้น — ต้องค้นหาและตรวจวันลา ช่องล็อก และรอยต่อก่อนรับรองตาราง';
+
+ $('minimum').value=state.settings.minimum;$('blockLength').value=state.settings.blockLength;$('searchBudget').value=state.settings.budget;
+ for(const side of ['prior','tail']){const data=boundary(side),[y,m]=ym(),dates=Array.from({length:6},(_,i)=>{const dt=new Date(Date.UTC(y,m-1,side==='prior'?i-5:C.days(y,m)+i+1));return dt.getUTCDate()+'/'+(dt.getUTCMonth()+1);});$(side==='prior'?'historyTable':'tailTable').innerHTML='<table class="plain-table"><thead><tr><th>RN</th>'+dates.map(d=>`<th>${d}</th>`).join('')+'</tr></thead><tbody>'+people().map(n=>`<tr><td>${esc(n.name)}</td>${data[n.id].map((c,i)=>`<td><select class="history-select" data-boundary="${side}:${n.id}:${i}" aria-label="${esc(n.name)} ${dates[i]}"><option value="?">?</option>${C.CODES.map(s=>`<option ${s===c?'selected':''}>${s}</option>`).join('')}</select></td>`).join('')}</tr>`).join('')+'</tbody></table>';}
+}
+function renderChecks(v){
+ const par=params(),details=[];
+ v.coverage.forEach((cv,d)=>{for(const code of ['ช','บ','ด']){const gap=Math.max(0,C.demand(par)[code]-cv[code].count);if(!gap&&cv[code].stroke>=C.skill(par)[code]&&cv[code].competent>=C.competentNeed(par)[code]&&cv[code].senior>=C.seniorNeed(par)[code]&&cv[code].novice>=C.noviceNeed(par)[code])continue;
+ const counts={};for(const n of par.nurses.filter(n=>!C.isNovice(par,n))){const old=par.rows[n.id][d],mask=(C.MASK[old]||0)|C.MASK[code];let reason;
+ if(C.MASK[old]&C.MASK[code])continue;
+ if(par.requests[n.id]?.[d]?.status==='approved')reason='วันหยุดอนุมัติ';else if(par.locks[n.id]?.[d]!==undefined)reason='ช่องล็อก';else if(!C.FROM[mask])reason='คู่เวรไม่รองรับ';else{const row=par.rows[n.id].slice();row[d]=C.FROM[mask];const check=C.validate({...par,nurses:[n],rows:{[n.id]:row}});const x=check.issues.find(x=>['transition','pair','repeat','rolling'].includes(x.type)&&x.days.includes(d));reason=x?({transition:'บ่ายต่อดึก',pair:'ดึกต่อเช้าไม่มีช่วงพัก',repeat:'เวรซ้ำเกิน 2 วัน',rolling:'เกิน 8 เวรใน 7 วัน'})[x.type]:'ยังอาจจัดได้ / ต้องค้นหาใหม่';}counts[reason]=(counts[reason]||0)+1;}
+ details.push(`วันที่ ${d+1} เวร ${code}: ขาด ${gap} คน${C.enabled(par,'stroke')?'; Stroke ขาด '+Math.max(0,C.skill(par)[code]-cv[code].stroke)+' คน':''}${C.enabled(par,'competent')?'; Competent ขาด '+Math.max(0,C.competentNeed(par)[code]-cv[code].competent)+' คน':''}${C.enabled(par,'senior')?'; Senior ขาด '+Math.max(0,C.seniorNeed(par)[code]-cv[code].senior)+' คน':''}${C.enabled(par,'novice')?'; Novice ขาด '+Math.max(0,C.noviceNeed(par)[code]-cv[code].novice)+' คน':''} — `+Object.entries(counts).map(([k,v])=>k+' '+v+' คน').join(' · '));
+ }});
+
+ $('checkSummary').innerHTML=`<div class="notice ${v.valid?'':'error'}">${v.valid?'ผ่านกฎในช่วงที่มีข้อมูลครบ':'พบ '+v.issues.length+' รายการ'} · ${esc($('historyWarning').textContent)}</div>`;
+ $('issuesList').innerHTML=v.issues.length?'<ol class="issues">'+v.issues.map((x,i)=>`<li><button data-issue="${i}">${esc(x.message)}</button></li>`).join('')+'</ol>':'<p class="status-good">ไม่พบข้อผิดเงื่อนไขในข้อมูลที่ตรวจได้</p>';
+ $('issuesList').innerHTML+=(details.length?'<h3>เหตุผลของตำแหน่งที่ยังว่าง (ตามตารางปัจจุบัน)</h3><ul>'+details.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'');
+ $('offTable').innerHTML='<table class="plain-table"><thead><tr><th>RN</th><th>เวรรวม</th><th>เช้า</th><th>บ่าย</th><th>ดึก</th><th>วันขึ้นงาน</th><th>OFF รวม</th><th>OFF ติดกันสูงสุด</th><th>ช่วงหยุด ≥ 3 วัน</th></tr></thead><tbody>'+people().map(n=>{const s=v.sums[n.id];return `<tr><td>${esc(n.name)}</td><td>${s.units}</td><td>${s.shifts['ช']}</td><td>${s.shifts['บ']}</td><td>${s.shifts['ด']}</td><td>${s.worked}</td><td>${s.off}</td><td class="${s.maxoff>=3?'status-good':'status-warn'}">${s.maxoff} วัน</td><td>${s.blocks.length?s.blocks.map(b=>b.join('–')).join(', '):'ยังไม่ได้ช่วงหยุด'}</td></tr>`;}).join('')+'</tbody></table>';
+}
+const palette=['','#fff0ad','#d7f2df','#dceaff','#f5dce8','#eadfff','#ffe0bf'];
+function openCell(id,d){
+ if(worker)return;const p=plan(),n=state.nurses.find(n=>n.id===id);if($('paintMode').checked){snapshot();(p.colors[id]??={})[d]=$('paintColor').value;changed();return;}
+ edit={id,d,code:p.rows[id][d]||'OFF',color:p.colors[id]?.[d]||''};$('cellTitle').textContent=n.name;$('cellSubtitle').textContent=`วันที่ ${d+1} ${MONTHS[ym()[1]-1]} ${ym()[0]+543}`;$('cellNote').value=p.notes[id]?.[d]||'';$('cellLock').checked=p.locks[id]?.[d]!==undefined;const r=params().requests[id]?.[d];$('cellLeaveHint').textContent=isAdmin()?'เลือก VA แล้วบันทึกเพื่ออนุมัติทันที · เปลี่ยน VA เป็นเวรอื่นจะยกเลิก VA ของวันนั้น':r?'มีวันหยุดอนุมัติ: '+r.type+' · หากแก้ไม่ตรง ระบบจะแสดงตัวแดง':'VA ต้องมีคำขอที่อนุมัติก่อน มิฉะนั้นจะขึ้นตัวแดง';renderCellChoices();$('cellDialog').showModal();
+}
+function renderCellChoices(){$('shiftChoices').innerHTML=C.activeCodes(state.settings).map(c=>`<button data-code="${c}" ${c==='VA'&&!isAdmin()&&params().requests[edit.id]?.[edit.d]?.type!=='VA'?'disabled title="กรุณาส่งคำขอ VA ให้บัญชี C7 อนุมัติ"':''} class="${edit.code===c?'selected':''}">${c}</button>`).join('');$('cellColors').innerHTML=palette.map(c=>`<button data-color="${c}" class="${edit.color===c?'selected':''}" style="background:${c||'#fff'}" aria-label="${c||'ล้างสี'}">${c?'':'×'}</button>`).join('');}
+function startGeneration(){
+ if(worker)return;if(Object.values(plan().rows).some(row=>row.some(c=>c))&&!confirm('สร้างตารางใหม่แทนเวรปัจจุบัน? ช่องล็อกและหมายเหตุจะคงอยู่ สามารถกดย้อนกลับได้'))return;
+ $('messageBox').className='hidden';$('generateBtn').disabled=true;$('cancelBtn').classList.remove('hidden');$('progressBox').classList.remove('hidden');$('progressText').textContent='กำลังเตรียมจัดเวร';
+ const blob=new Blob([$('engine').textContent+'\nself.onmessage=e=>{try{const r=RNCore.generate(e.data,p=>self.postMessage({progress:p}));self.postMessage({result:r});}catch(err){self.postMessage({error:err.message});}};'],{type:'text/javascript'}),url=URL.createObjectURL(blob),jobKey=planKey(),par=params(),fingerprint=JSON.stringify(state);
+ try{worker=new Worker(url);}catch(e){URL.revokeObjectURL(url);finish();message('เบราว์เซอร์นี้ไม่รองรับตัวคำนวณในไฟล์ กรุณาเปิดด้วย Chrome หรือ Edge รุ่นปัจจุบัน');return;}URL.revokeObjectURL(url);
+ worker.onmessage=e=>{if(e.data.progress){$('progressText').textContent=e.data.progress.message;$('progress').value=e.data.progress.percent;return;}if(e.data.error){finish();message('คำนวณไม่สำเร็จ: '+e.data.error);return;}const r=e.data.result;
+ if(r.needsConfirmation){
+  if(planKey()!==jobKey||fingerprint!==JSON.stringify(state)){finish();message('ข้อมูลเปลี่ยนระหว่างคำนวณ กรุณาสร้างใหม่','warn');return;}
+  const proceed=confirm('ยังจัดตารางที่ผ่านทุกเงื่อนไขไม่ได้\n\n'+r.reasons.slice(0,6).join('\n')+'\n\nต้องการจัดต่อเป็นตารางบางส่วนหรือไม่?\nระบบจะคงกฎที่เปิดไว้ รวมกฎ 7 วัน 8 เวรหากเปิดใช้งาน และแสดงตำแหน่งที่ขาด/ข้อผิดเงื่อนไขเป็นสีแดง\nการค้นหาไม่พบไม่ใช่ข้อพิสูจน์ว่าไม่มีคำตอบ');
+  if(!proceed){finish();message('ยกเลิกการจัดตารางบางส่วน ตารางเดิมยังอยู่','warn');return;}
+  if(planKey()!==jobKey||fingerprint!==JSON.stringify(state)){finish();message('ข้อมูลเปลี่ยน กรุณากดสร้างใหม่','warn');return;}
+  $('progressText').textContent='กำลังจัดส่วนที่ทำได้ โดยคงกฎที่เปิดไว้';worker.postMessage({...par,allowPartial:true,partialOnly:true,failureReasons:r.reasons});return;
+ }
+ finish();if(planKey()!==jobKey||fingerprint!==JSON.stringify(state)){message('ข้อมูลเปลี่ยนระหว่างคำนวณ จึงไม่เขียนทับ กรุณากดสร้างตารางใหม่จากข้อมูลล่าสุด','warn');return;}if(!r.ok){message(r.reasons.join(' · '));return;}snapshot();const p=plan();p.rows=r.rows;p.generatedAt=new Date().toISOString();changed();const passed=Object.values(lastValidation.sums).filter(s=>s.maxoff>=3).length;if(r.partial)message(r.reasons.join(' · '),'warn');toast(r.partial?'สร้างตารางบางส่วนแล้ว — ตรวจตำแหน่งที่ยังขาด':version===2?`จัดเวรแล้ว · ได้ OFF ≥ 3 วัน ${passed}/${people().length} คน`:'จัดเวรครบและผ่านการตรวจแล้ว');goTab('roster');};
+ worker.onerror=e=>{finish();message('ตัวคำนวณหยุดทำงาน: '+e.message);};worker.postMessage(par);
+ function finish(){if(worker)worker.terminate();worker=null;$('generateBtn').disabled=false;$('cancelBtn').classList.add('hidden');$('progressBox').classList.add('hidden');}
+}
+function download(name,data,mime){const u=URL.createObjectURL(new Blob([data],{type:mime})),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}
+function backup(){download(`${exportBase()}_backup_${today()}.json`,JSON.stringify(state,null,2),'application/json');}
+function exportRows(receipt=null){const p=plan(),calendar=cal(),v=lastValidation;const lines=[[wardName(),state.selected,'V'+version,'สถานะ',v.valid?'ผ่านข้อมูลที่มี':'มีข้อผิดเงื่อนไข '+v.issues.length],['ชื่อ','บทบาท',...calendar.rows.map(d=>d.date),'เวรรวม','วันขึ้นงาน','VA','OFF','OT เวร','OT ชั่วโมง','เช้า','บ่าย','ดึก']];for(const n of people()){const s=v.sums[n.id];lines.push([n.name,roleText(n),...p.rows[n.id],s.units,s.worked,s.va,s.off,s.ot,s.otHours,s.shifts['ช'],s.shifts['บ'],s.shifts['ด']]);}for(const shift of ['ด','ช','บ']){lines.push(['RN '+shift,'',...v.coverage.map(x=>x[shift].count)]);for(const k of ['stroke','senior','competent','novice'])if(C.enabled(params(),k))lines.push([k+' '+shift,'',...v.coverage.map(x=>x[shift][k])]);}lines.push([],['รูปแบบเวรดึก',nightDescription()],['หมายเหตุเดือน',p.monthlyNote],['อัตรากำลัง เช้า/บ่าย/ดึก',...['ช','บ','ด'].map(c=>C.demand(params())[c])],['วันทำการ',calendar.workdays],['รอยต่อเดือน',$('historyWarning').textContent]);if(receipt)lines.push(['การรับทราบ','รับทราบข้อผิดเงื่อนไข / คำเตือนก่อนส่งออก',receipt.at],['จำนวนข้อผิดเงื่อนไข',receipt.count],['ข้อมูลรอยต่อเดือนไม่ครบ',receipt.boundaryMissing?'ใช่':'ไม่ใช่']);for(const line of mentorLines(v))lines.push(['คู่พี่เลี้ยง',line]);for(const n of people())for(const [d,note]of Object.entries(p.notes[n.id]||{}))if(note)lines.push(['หมายเหตุช่อง',n.name,Number(d)+1,note]);return lines;}
+function exportCSV(receipt=null){const protect=x=>{let t=String(x??'');if(/^[=+@\-\t\r]/.test(t))t="'"+t;return '"'+t.replace(/"/g,'""')+'"';};download(`${exportBase()}_${state.selected}_V${version}.csv`,'\ufeff'+exportRows(receipt).map(r=>r.map(protect).join(',')).join('\r\n'),'text/csv;charset=utf-8');}
+
+
+function shiftDate(date,offset){const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+offset);return d.toISOString().slice(0,10);}
+function cutRequests(test,start,end){
+ state.requests=state.requests.flatMap(r=>{
+  if(!test(r)||r.end<start||r.start>end)return [r];
+  const parts=[];
+  if(r.start<start)parts.push({...r,end:shiftDate(start,-1),uid:r.uid+'_before_'+start});
+  if(r.end>end)parts.push({...r,start:shiftDate(end,1),uid:r.uid+'_after_'+end});
+  return parts;
+ });
+}
+function clearRoster(){
+ if(worker)return toast('กรุณาหยุดค้นหาก่อนล้างตารางเวร');
+ if(!requireAdmin())return;
+ if(!confirm(`ล้างเวรและล็อกในเดือน ${state.selected} เวอร์ชัน ${version} พร้อมคำขอ VA ทุกสถานะของเดือนนี้? VA ของเดือนนี้ในอีกเวอร์ชันจะถูกล้างด้วย เก็บส่วนคำขอที่อยู่นอกเดือนนี้ไว้ สามารถย้อนกลับได้`))return;
+ snapshot();const p=plan(),[y,m]=ym(),first=state.selected+'-01',last=C.key(y,m,C.days(y,m));
+ for(const id of Object.keys(p.rows))p.rows[id]=p.rows[id].map(()=>'');p.locks={};p.generatedAt=null;
+ cutRequests(r=>r.type==='VA',first,last);
+ for(const [key,other]of Object.entries(state.plans))if(key.slice(2)===state.selected){for(const [id,row]of Object.entries(other.rows))row.forEach((code,d)=>{if(code==='VA')row[d]='';if(other.locks[id]?.[d]==='VA')delete other.locks[id][d];});}
+ $('messageBox').className='hidden';changed();toast('ล้างตารางและคำขอ VA ของเดือนนี้แล้ว');
+}
+function renderAccount(){
+ $('accountLabel').textContent=isAdmin()?'C7 · ผู้อนุมัติ':'Guest';$('accountBtn').textContent=isAdmin()?'ออกจากระบบ':'Login';
+ $('leaveStatus').disabled=!isAdmin();if(!isAdmin())$('leaveStatus').value='pending';
+ $('clearBtn').disabled=!isAdmin();$('mockRestoreBtn').disabled=!isAdmin();$('importBtn').disabled=!isAdmin();
+}
+function enterAccount(next){
+ if(worker){worker.terminate();worker=null;$('progressBox').classList.add('hidden');$('cancelBtn').classList.add('hidden');$('generateBtn').disabled=false;}
+ role=next;undo=[];for(const dialog of document.querySelectorAll('dialog[open]'))dialog.close();
+ $('loginPassword').value='';$('loginError').textContent='';render();
+}
+function applyCellEdit(){
+ if(!edit)return;const p=plan(),{id,d}=edit,old=p.rows[id][d],date=state.selected+'-'+String(d+1).padStart(2,'0');
+ const approved=state.requests.some(r=>r.id===id&&r.type==='VA'&&r.status==='approved'&&r.start<=date&&r.end>=date);
+ if(!isAdmin()&&(edit.code==='VA'&&!approved||old==='VA'&&edit.code!=='VA'))return toast('Guest ต้องส่งคำขอ VA ให้บัญชี C7 อนุมัติก่อน');
+ snapshot();
+ if(isAdmin()&&edit.code==='VA'){
+  cutRequests(r=>r.id===id,date,date);
+  state.requests.push({uid:'table_'+Date.now().toString(36)+'_'+id+'_'+d,id,type:'VA',status:'approved',start:date,end:date,requested:today(),note:$('cellNote').value,source:'table',approvedBy:'C7',approvedAt:new Date().toISOString()});
+ }
+ if(isAdmin()&&old==='VA'&&edit.code!=='VA'){cutRequests(r=>r.id===id&&r.type==='VA',date,date);for(const [key,other]of Object.entries(state.plans))if(key.slice(2)===state.selected&&other!==p){if(other.rows[id]?.[d]==='VA')other.rows[id][d]='';if(other.locks[id]?.[d]==='VA')delete other.locks[id][d];}}
+ p.rows[id][d]=edit.code;(p.colors[id]??={})[d]=edit.color;(p.notes[id]??={})[d]=$('cellNote').value;
+ if($('cellLock').checked)(p.locks[id]??={})[d]=edit.code;else if(p.locks[id])delete p.locks[id][d];
+ $('cellDialog').close();changed();
+ if(isAdmin()&&edit.code==='VA')toast('บันทึก VA และอนุมัติแล้ว');
+}
+function readMock(){const raw=localStorage.getItem(MOCK_KEY);if(!raw)throw Error('ยังไม่มี mock data กรุณากดบันทึกข้อมูลก่อน');const item=JSON.parse(raw);validateBackup(item.data);return item;}
+// A small uncompressed ZIP writer keeps Excel export available offline.
+function excelZip(files){
+ const enc=new TextEncoder(),parts=[],central=[];let offset=0;
+ const header=n=>new Uint8Array(n),view=a=>new DataView(a.buffer);
+ for(const [path,text] of Object.entries(files)){
+  const name=enc.encode(path),data=enc.encode(text);let crc=0xffffffff;
+  for(const byte of data){crc^=byte;for(let i=0;i<8;i++)crc=(crc>>>1)^((crc&1)?0xedb88320:0);}crc=(crc^0xffffffff)>>>0;
+  const local=header(30),l=view(local);l.setUint32(0,0x04034b50,true);l.setUint16(4,20,true);l.setUint16(12,33,true);l.setUint32(14,crc,true);l.setUint32(18,data.length,true);l.setUint32(22,data.length,true);l.setUint16(26,name.length,true);
+  const dir=header(46),d=view(dir);d.setUint32(0,0x02014b50,true);d.setUint16(4,20,true);d.setUint16(6,20,true);d.setUint16(14,33,true);d.setUint32(16,crc,true);d.setUint32(20,data.length,true);d.setUint32(24,data.length,true);d.setUint16(28,name.length,true);d.setUint32(42,offset,true);
+  parts.push(local,name,data);central.push(dir,name);offset+=local.length+name.length+data.length;
+ }
+ const size=central.reduce((n,a)=>n+a.length,0),end=header(22),e=view(end),count=Object.keys(files).length;e.setUint32(0,0x06054b50,true);e.setUint16(8,count,true);e.setUint16(10,count,true);e.setUint32(12,size,true);e.setUint32(16,offset,true);
+ return new Blob([...parts,...central,end],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+}
+function rosterTitle(){return 'ตารางปฏิบัติงานพยาบาลวิชาชีพ '+wardName();}
+function signatures(){return [['','หัวหน้า'+wardName()],['','หัวหน้าฝ่ายการพยาบาลผู้ป่วยใน'],['','รองผู้อำนวยการกลุ่มงานด้านการพยาบาล']];}
+function rosterRemarks(){
+ const p=plan(),lines=['วอร์ด: '+wardName(),nightDescription(),'ยอดรวมและ OT นับตามช่องตาราง / กฎต่อเนื่องนับตามวันทำงานจริง','กฎ 7 วันไม่เกิน 8 เวร: '+(C.rollingEnabled(state.settings)?'เปิดใช้งาน':'ปิดใช้งาน')];
+ if(p.monthlyNote.trim())lines.push(p.monthlyNote.trim());
+ const labels={'ด':'เวรดึก','ช':'เวรเช้า','บ':'เวรบ่าย','ช/บ':'เวรเช้า/บ่าย','ช/ด':'เวรเช้า/ดึก','ด/บ':'เวรดึก/บ่าย','OFF':'วันหยุด','VA':'VA'};
+ for(let d=0;d<cal().rows.length;d++)for(const n of people()){
+  const note=p.notes[n.id]?.[d];if(typeof note!=='string'||!note.trim())continue;
+  const code=p.rows[n.id]?.[d]||'';
+  lines.push(`${labels[code]||'ยังไม่ระบุเวร'} ${n.name} ${note.trim()} (วันที่ ${d+1})`);
+ }
+ return lines.join('\n');
+}
+function renderRemarks(){
+ $('tableRemarks').textContent=rosterRemarks();
+ $('signatureBlock').innerHTML=signatures().map(([name,role])=>`<div><p>ลงชื่อ................................................</p><p class="sign-name">${esc(name)}</p><p>${esc(role)}</p><p>ลงวันที่............................................</p></div>`).join('');
+}
+function buildExportForm(){
+ renderRemarks();
+ const p=plan(),calendar=cal(),D=calendar.rows.length,nsPeople=people(),[year,month]=ym(),N=D+9;
+ const xml=x=>String(x??'').replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const col=i=>{let s='';for(i++;i;i=Math.floor((i-1)/26))s=String.fromCharCode(65+(i-1)%26)+s;return s;};
+ const rows=[],merges=[];
+ function row(values,style=0,height=24,colors=[],textColors=[]){rows.push({values,style,height,colors,textColors});return rows.length;}
+ function merge(r,a,b){if(b>a)merges.push(`${col(a)}${r}:${col(b)}${r}`);}
+ let r=row([rosterTitle()],3,32);merge(r,0,N-1);
+ r=row([`ประจำเดือน ${MONTHS[month-1]} ${year+543}`],3,28);merge(r,0,N-1);
+ row([],0,9);
+ const headerColors=['','',...calendar.rows.map(d=>d.holiday?'#fff0cf':[0,6].includes(new Date(year,month-1,d.day).getDay())?'#e6edf1':'')];
+ const headerTextColors=['#425c69','#425c69',...calendar.rows.map(d=>lastValidation.badDays?.[d.day-1]?'#b42332':d.holiday?'#9d5714':'#425c69'),...Array(7).fill('#425c69')];
+ row(['ที่','รายชื่อ',...calendar.rows.map(d=>['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'][new Date(year,month-1,d.day).getDay()]),'ช','บ','ด','Va','O','รวม','OT'],1,24,headerColors,headerTextColors);
+ row(['','',...calendar.rows.map(d=>d.day)],1,24,headerColors,headerTextColors);
+ for(const j of [0,1,...Array.from({length:7},(_,i)=>D+2+i)])merges.push(`${col(j)}4:${col(j)}5`);
+ nsPeople.forEach((n,i)=>{const sum=lastValidation.sums[n.id];row([i+1,n.name+(roleText(n)?' ('+roleText(n)+')':''),...p.rows[n.id].map(c=>c==='OFF'?'O':c==='VA'?'va':c),sum.shifts['ช'],sum.shifts['บ'],sum.shifts['ด'],sum.va,sum.off,sum.units,sum.ot],2,28,['','',...p.rows[n.id].map((code,d)=>exportCellFill(p,n.id,d,code))],['#93a3ac','#162b39',...p.rows[n.id].map((code,d)=>exportCellTextColor(code,!!lastValidation.bad?.[n.id]?.[d])),...Array(7).fill('#162b39')]);});
+ for(const [code,label] of [['ช','เช้า'],['บ','บ่าย'],['ด','ดึก']])row(['',label,...lastValidation.coverage.map(c=>c[code].count)],1,24,[],['#162b39','#162b39',...lastValidation.coverage.map(c=>c[code].count===C.demand(params())[code]?'#0b776e':'#b42332')]);
+ for(const k of ['stroke','senior','competent','novice'])if(C.enabled(params(),k))for(const code of ['ช','บ','ด'])row(['',k+' '+code,...lastValidation.coverage.map(c=>c[code][k])],1,24);
+ for(const code of ['ช','บ','ด']){row(['','ขาด '+code,...lastValidation.coverage.map(c=>Math.max(0,C.demand(params())[code]-c[code].count))],1,24);}
+ row([],0,10);
+ const notes=[...$('tableRemarks').textContent.split('\n'),...mentorLines(),'อัตรากำลัง RN เช้า/บ่าย/ดึก: '+['ช','บ','ด'].map(c=>C.demand(params())[c]).join('/')+' คน'+['stroke','senior','competent','novice'].filter(k=>C.enabled(params(),k)).map(k=>'; '+k+': '+['ช','บ','ด'].map(c=>({stroke:C.skill,senior:C.seniorNeed,novice:C.noviceNeed,competent:C.competentNeed})[k](params())[c]).join('/')+' คน').join('')];
+ r=row(['หมายเหตุ'],0,24);merge(r,0,N-1);
+ notes.forEach(line=>{r=row(['',line],0,24);merge(r,1,N-1);});
+ row([],0,18);
+ const boundaries=[1,Math.floor(N/3)+1,Math.floor(2*N/3)+1,N];
+ for(let k=0;k<4;k++){
+  const vals=Array(N).fill('');
+  signatures().forEach(([name,role],i)=>vals[boundaries[i]]=k===0?'ลงชื่อ................................................':k===1?name:k===2?role:'ลงวันที่............................................');
+  r=row(vals,4,k===2?42:26);for(let i=0;i<3;i++)merge(r,boundaries[i],boundaries[i+1]-1);
+ }
+
+ const widths=[6,36,...Array(D).fill(5),...Array(7).fill(6)],scale=1134/widths.reduce((a,b)=>a+b,0);
+ const positions=[0];widths.forEach(w=>positions.push(positions.at(-1)+w*scale));
+ const mergeAt=new Map(),covered=new Set();
+ const number=letters=>Array.from(letters).reduce((n,c)=>n*26+c.charCodeAt(0)-64,0)-1;
+ for(const ref of merges){const m=/^([A-Z]+)(\d+):([A-Z]+)(\d+)$/.exec(ref),c1=number(m[1]),r1=+m[2]-1,c2=number(m[3]),r2=+m[4]-1;mergeAt.set(`${r1}:${c1}`,{c2,r2});for(let i=r1;i<=r2;i++)for(let j=c1;j<=c2;j++)if(i!==r1||j!==c1)covered.add(`${i}:${j}`);}
+ const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
+ if(!ctx)throw Error('ไม่สามารถจัดรูปแบบตาราง');
+ for(let i=0;i<rows.length;i++){
+  const item=rows[i];item.cells=[];
+  for(let j=0;j<N;j++){
+   if(covered.has(`${i}:${j}`))continue;
+   const merged=mergeAt.get(`${i}:${j}`),end=merged?.c2??j,w=positions[end+1]-positions[j],value=String(item.values[j]??'');
+   const size=item.style===3?17:([1,2].includes(item.style)&&j>=2&&j<D+2?11:12),bold=item.style===3;
+   ctx.font=exportFont(size,bold);
+   const lines=exportWrap(ctx,value,w-4);
+   const align=item.style===0||item.style===2&&j===1?'left':'center';
+   item.cells.push({j,end,lastRow:merged?.r2??i,w,lines,size,bold,align,textColor:item.textColors[j]||'#162b39',fill:item.colors[j]||'#ffffff',border:[1,2].includes(item.style)});
+   if(!merged||merged.r2===i)item.height=Math.max(item.height,lines.length*(size+4)+8);
+  }
+ }
+ return {rows,merges,D,N,widths,positions,col,xml};
+}
+function exportCellTextColor(code,bad=false){
+ if(bad)return '#b42332';
+ return code==='OFF'?'#80939b':code==='VA'?'#92528d':code.includes('ช')?'#086b69':code==='บ'?'#996109':'#4863a8';
+}
+function exportCellFill(p,id,d,code){
+ const color=p.colors[id]?.[d];return /^#[0-9a-f]{6}$/i.test(color||'')?color.toLowerCase():code==='VA'?'#f8edf8':'';
+}
+function exportFont(size,bold=false){return `${bold?'bold ':''}${size}px "Ward Thai", "TH Sarabun New", Tahoma, "Leelawadee UI", sans-serif`;}
+function exportWrap(ctx,value,maxWidth){
+ const lines=[],segments=typeof Intl.Segmenter==='function'?new Intl.Segmenter('th',{granularity:'grapheme'}):null;
+ for(const paragraph of value.split('\n')){
+  let line='';const chars=segments?Array.from(segments.segment(paragraph),s=>s.segment):Array.from(paragraph);
+  for(const ch of chars){if(line&&ctx.measureText(line+ch).width>maxWidth){lines.push(line);line='';}line+=ch;}lines.push(line);
+ }
+ return lines;
+}
+function exportExcel(receipt=null){
+ const {rows,merges,D,N,widths,col,xml}=buildExportForm();
+ const colors=[...new Set(rows.flatMap(row=>row.colors).filter(c=>/^#[0-9a-f]{6}$/i.test(c)))];
+ const fills=colors.map(color=>`<fill><patternFill patternType="solid"><fgColor rgb="FF${color.slice(1).toUpperCase()}"/><bgColor indexed="64"/></patternFill></fill>`).join('');
+ const styles=[[0,0,'left',0],[0,1,'center',0],[0,1,'center',0],[1,0,'center',0],[0,0,'center',0],[0,1,'left',0]];
+ const fontColors=[...new Set(rows.flatMap(row=>row.textColors).filter(c=>/^#[0-9a-f]{6}$/i.test(c)))];
+ const fontXML=color=>`<font><sz val="14"/><color rgb="FF${color.slice(1).toUpperCase()}"/><name val="TH Sarabun New"/></font>`;
+ const colorStyle=new Map();
+ function styleFor(base,color,textColor){
+  if(!color&&!textColor)return base;
+  const key=base+':'+(color||'')+':'+(textColor||'');
+  if(!colorStyle.has(key)){
+   const style=styles[base].slice();
+   if(color)style[3]=colors.indexOf(color)+2;
+   if(textColor)style[0]=fontColors.indexOf(textColor)+2;
+   colorStyle.set(key,styles.length);styles.push(style);
+  }
+  return colorStyle.get(key);
+ }
+ const data=rows.map((row,i)=>`<row r="${i+1}" ht="${row.height}" customHeight="1">`+Array.from({length:N},(_,j)=>{
+  const v=row.values[j]??'',style=styleFor(row.style===2&&j===1?5:row.style,row.colors[j],row.textColors[j]),ref=col(j)+(i+1);
+  return typeof v==='number'&&Number.isFinite(v)?`<c r="${ref}" s="${style}"><v>${v}</v></c>`:`<c r="${ref}" s="${style}" t="inlineStr"><is><t xml:space="preserve">${xml(v)}</t></is></c>`;
+ }).join('')+'</row>').join('');
+ const ns='http://schemas.openxmlformats.org/spreadsheetml/2006/main';
+ const files={
+ '[Content_Types].xml':'<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>',
+ '_rels/.rels':'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>',
+ 'xl/workbook.xml':`<workbook xmlns="${ns}" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="ตารางเวร RN" sheetId="1" r:id="rId1"/></sheets></workbook>`,
+ 'xl/_rels/workbook.xml.rels':'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>',
+
+ 'xl/styles.xml':`<styleSheet xmlns="${ns}"><fonts count="${fontColors.length+2}">${fontXML('#162b39')}<font><b/><sz val="16"/><color rgb="FF162B39"/><name val="TH Sarabun New"/></font>${fontColors.map(fontXML).join('')}</fonts><fills count="${colors.length+2}"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill>${fills}</fills><borders count="2"><border/><border><left style="thin"/><right style="thin"/><top style="thin"/><bottom style="thin"/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="${styles.length}">${styles.map(([f,b,a,fill])=>`<xf numFmtId="0" fontId="${f}" fillId="${fill}" borderId="${b}" xfId="0" applyFill="1" applyFont="1" applyAlignment="1"><alignment horizontal="${a}" vertical="center" wrapText="1"/></xf>`).join('')}</cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`,
+ 'xl/worksheets/sheet1.xml':`<worksheet xmlns="${ns}"><sheetPr><pageSetUpPr fitToPage="1"/></sheetPr><dimension ref="A1:${col(N-1)}${rows.length}"/><sheetViews><sheetView workbookViewId="0" showGridLines="0"><pane xSplit="2" ySplit="5" topLeftCell="C6" activePane="bottomRight" state="frozen"/></sheetView></sheetViews><sheetFormatPr defaultRowHeight="24"/><cols><col min="1" max="1" width="6" customWidth="1"/><col min="2" max="2" width="36" customWidth="1"/><col min="3" max="${D+2}" width="5" customWidth="1"/><col min="${D+3}" max="${N}" width="6" customWidth="1"/></cols><sheetData>${data}</sheetData><mergeCells count="${merges.length}">${merges.map(ref=>`<mergeCell ref="${ref}"/>`).join('')}</mergeCells><printOptions horizontalCentered="1"/><pageMargins left="0.25" right="0.25" top="0.3" bottom="0.3" header="0" footer="0"/><pageSetup paperSize="8" orientation="landscape" fitToWidth="1" fitToHeight="0"/></worksheet>`
+ };
+ files['xl/workbook.xml']=files['xl/workbook.xml'].replace('</sheets>','</sheets><definedNames><definedName name="_xlnm.Print_Area" localSheetId="0">\'ตารางเวร RN\'!$A$1:$'+col(N-1)+'$'+rows.length+'</definedName><definedName name="_xlnm.Print_Titles" localSheetId="0">\'ตารางเวร RN\'!$4:$5</definedName></definedNames>');
+ download(`${exportBase()}_${state.selected}_V${version}.xlsx`,excelZip(files),'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');toast('ส่งออก Excel แล้ว');
+}
+
+
+function pdfFromImages(images){
+ const enc=new TextEncoder(),parts=[],offsets=[0];let size=0;
+ const put=x=>{const b=typeof x==='string'?enc.encode(x):x;parts.push(b);size+=b.length;};
+ const obj=(id,body)=>{offsets[id]=size;put(`${id} 0 obj\n`);put(body);put('\nendobj\n');};
+ put('%PDF-1.4\n');obj(1,'<< /Type /Catalog /Pages 2 0 R >>');obj(2,`<< /Type /Pages /Count ${images.length} /Kids [${images.map((_,i)=>`${3+i*3} 0 R`).join(' ')}] >>`);
+ images.forEach((im,i)=>{const id=3+i*3;obj(id,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1190.55 841.89] /Resources << /XObject << /Im ${id+1} 0 R >> >> /Contents ${id+2} 0 R >>`);offsets[id+1]=size;put(`${id+1} 0 obj\n<< /Type /XObject /Subtype /Image /Width ${im.width} /Height ${im.height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${im.bytes.length} >>\nstream\n`);put(im.bytes);put('\nendstream\nendobj\n');const cmd='q 1190.55 0 0 841.89 0 0 cm /Im Do Q';obj(id+2,`<< /Length ${enc.encode(cmd).length} >>\nstream\n${cmd}\nendstream`);});
+ const xref=size;put(`xref\n0 ${offsets.length}\n0000000000 65535 f \n`);for(let i=1;i<offsets.length;i++)put(`${String(offsets[i]).padStart(10,'0')} 00000 n \n`);put(`trailer\n<< /Size ${offsets.length} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);return new Blob(parts,{type:'application/pdf'});
+}
+function exportPDF(receipt){
+ const form=buildExportForm(),{rows,positions}=form,images=[];
+ const left=28,top=24,bottom=810;let canvas,ctx,y;
+ function page(){
+  canvas=document.createElement('canvas');canvas.width=3570;canvas.height=2526;
+  ctx=canvas.getContext('2d');if(!ctx)throw Error('ไม่สามารถสร้างภาพตาราง');
+  ctx.scale(3,3);ctx.fillStyle='#fff';ctx.fillRect(0,0,1190,842);y=top;
+ }
+ function finish(){const raw=atob(canvas.toDataURL('image/jpeg',0.98).split(',')[1]);images.push({width:canvas.width,height:canvas.height,bytes:Uint8Array.from(raw,c=>c.charCodeAt(0))});}
+ function drawRow(i,offset=0,count=null,height=null){
+  const row=rows[i],h=height??row.height;
+  for(const cell of row.cells){
+   const x=left+positions[cell.j],cellH=cell.lastRow>i?rows.slice(i,cell.lastRow+1).reduce((sum,r)=>sum+r.height,0):h;
+   ctx.fillStyle=cell.fill;ctx.fillRect(x,y,cell.w,cellH);
+   if(cell.border){ctx.strokeStyle='#222';ctx.lineWidth=.5;ctx.strokeRect(x,y,cell.w,cellH);}
+   const lines=cell.lines.slice(offset,count===null?undefined:offset+count),lineH=cell.size+4;
+   ctx.save();ctx.beginPath();ctx.rect(x+2,y+1,cell.w-4,cellH-2);ctx.clip();
+   ctx.font=exportFont(cell.size,cell.bold);ctx.fillStyle=cell.textColor;ctx.textBaseline='middle';ctx.textAlign=cell.align;
+   const textX=cell.align==='center'?x+cell.w/2:x+4,startY=y+(cellH-lines.length*lineH)/2+lineH/2;
+   lines.forEach((line,k)=>ctx.fillText(line,textX,startY+k*lineH));ctx.restore();
+  }
+  y+=h;
+ }
+ function nextPage(tableHeader){finish();page();for(let k=0;k<(tableHeader?5:3);k++)drawRow(k);}
+ page();
+ for(let i=0;i<rows.length;i++){
+  const row=rows[i],signature=i>=rows.length-4;
+  if(i===rows.length-4&&y+rows.slice(i).reduce((sum,r)=>sum+r.height,0)>bottom)nextPage(false);
+  if(y+row.height>bottom&&y>top){
+   // Keep the two header rows and all four signature lines together.
+   if(!signature)nextPage([1,2].includes(row.style));
+  }
+  if(row.height>bottom-y&&row.style===0&&row.cells.some(c=>c.lines.length>1)){
+   const total=Math.max(...row.cells.map(c=>c.lines.length));let offset=0;
+   while(offset<total){const count=Math.max(1,Math.floor((bottom-y-8)/16));const take=Math.min(count,total-offset);drawRow(i,offset,take,take*16+8);offset+=take;if(offset<total)nextPage(false);}
+  }else drawRow(i);
+ }
+ finish();download(`${exportBase()}_${state.selected}_V${version}.pdf`,pdfFromImages(images),'application/pdf');toast('สร้างไฟล์ PDF แล้ว');
+}
+
+let pendingExport=null;
+function exportWarnings(){
+ const p=params(),check=C.validate(p),boundaryMissing=[...Object.values(p.prior),...Object.values(p.next)].some(row=>row.some(c=>!c));
+ return {check,boundaryMissing};
+}
+function requestExport(kind){
+ render();const w=exportWarnings();
+ if(!w.check.issues.length&&!w.boundaryMissing){performExport(kind,null);return;}
+ pendingExport={kind,fingerprint:JSON.stringify(state)};
+ $('exportAcknowledged').checked=false;$('exportConfirm').disabled=true;
+ $('exportSummary').textContent=`พบข้อผิดเงื่อนไข ${w.check.issues.length} รายการ${w.boundaryMissing?' และข้อมูลรอยต่อเดือนไม่ครบ':''} กรุณาตรวจสอบก่อนส่งออก`;
+ $('exportIssues').innerHTML=w.check.issues.map(i=>`<li>${esc(i.message)}</li>`).join('')+(w.boundaryMissing?'<li>ข้อมูลเวรเดือนข้างเคียงไม่ครบ ยังตรวจรอยต่อเดือนได้ไม่ทั้งหมด</li>':'');
+ $('exportDialog').showModal();
+}
+function performExport(kind,receipt){
+ if(kind==='pdf'){try{exportPDF(receipt);}catch(e){toast('สร้าง PDF ไม่สำเร็จ: '+e.message);}return;}
+ if(kind==='xlsx'){try{exportExcel(receipt);}catch(e){toast('สร้าง Excel ไม่สำเร็จ: '+e.message);}return;}
+ if(kind==='csv'){exportCSV(receipt);return;}
+ goTab('roster');document.body.classList.add('export-clean');
+ if(receipt)$('printNotes').textContent+=` | รับทราบข้อผิดเงื่อนไข / คำเตือนแล้ว ${receipt.at}`;
+ try{window.print();}catch(e){document.body.classList.remove('export-clean');render();toast('เปิดหน้าพิมพ์ไม่สำเร็จ: '+e.message);}
+}
+$('exportAcknowledged').onchange=()=>{$('exportConfirm').disabled=!$('exportAcknowledged').checked;};
+$('exportCancel').onclick=()=>{pendingExport=null;$('exportDialog').close();};
+$('exportDialog').addEventListener('cancel',()=>{pendingExport=null;});
+$('exportConfirm').onclick=()=>{
+ if(!pendingExport||!$('exportAcknowledged').checked)return;
+ const job=pendingExport;
+ if(job.fingerprint!==JSON.stringify(state)){pendingExport=null;$('exportDialog').close();requestExport(job.kind);return;}
+ const w=exportWarnings(),receipt={at:new Date().toLocaleString('th-TH',{timeZone:'Asia/Bangkok'}),count:w.check.issues.length,boundaryMissing:w.boundaryMissing};
+ pendingExport=null;$('exportDialog').close();performExport(job.kind,receipt);
+};
+window.addEventListener('afterprint',()=>{document.body.classList.remove('export-clean');render();});
+function validateBackup(s){
+ const fail=()=>{throw Error('รูปแบบไฟล์สำรองไม่ถูกต้อง');};if(!s||s.schema!==1||!Array.isArray(s.nurses)||!Array.isArray(s.holidays)||!Array.isArray(s.requests)||!s.plans||!s.settings||!/^202[67]-(0[1-9]|1[0-2])$/.test(s.selected))fail();
+ if(s.nurses.length>100||s.requests.length>10000)fail();const ids=new Set();for(const n of s.nurses){if(!/^[A-Za-z0-9_-]+$/.test(n.id)||ids.has(n.id)||typeof n.name!=='string'||n.name.length>150||typeof n.stroke!=='boolean')fail();ids.add(n.id);}
+ if(!['units','days'].includes(s.settings.minimum)||![3,4].includes(s.settings.blockLength)||![1600,4500].includes(s.settings.budget)||typeof s.settings.vaCredit!=='boolean')fail();if(s.settings.rate!==null&&(!Number.isFinite(Number(s.settings.rate))||Number(s.settings.rate)<0))fail();
+ for(const c of ['ช','บ','ด'])if(!Number.isInteger(C.demand(s.settings)[c])||C.demand(s.settings)[c]<0||C.demand(s.settings)[c]>100||!Number.isInteger(C.skill(s.settings)[c])||C.skill(s.settings)[c]<0||C.skill(s.settings)[c]>C.demand(s.settings)[c])fail();
+ for(const n of s.nurses){if(n.level!==undefined&&!['rn','novice','competent','senior'].includes(n.level))fail();if(n.mentor!==undefined&&typeof n.mentor!=='boolean')fail();if(n.mentorId!==undefined&&(typeof n.mentorId!=='string'||n.mentorId===n.id||(n.mentorId&&!/^[A-Za-z0-9_-]+$/.test(n.mentorId))))fail();}
+ if(s.settings.useCompetent!==undefined&&typeof s.settings.useCompetent!=='boolean')fail();
+ if(s.settings.mentorMode!==undefined&&!['none','auto','fixed'].includes(s.settings.mentorMode))fail();if(s.settings.mentorCapacity!==undefined&&(!Number.isInteger(s.settings.mentorCapacity)||s.settings.mentorCapacity<1||s.settings.mentorCapacity>20))fail();
+ for(const c of ['ช','บ','ด'])if(!Number.isInteger(C.competentNeed(s.settings)[c])||C.competentNeed(s.settings)[c]<0||C.competentNeed(s.settings)[c]>100)fail();
+ if(s.settings.nightMode!==undefined&&!['front','back'].includes(s.settings.nightMode))fail();
+ if(s.settings.useRolling!==undefined&&typeof s.settings.useRolling!=='boolean')fail();
+ if(s.settings.wardName!==undefined&&(typeof s.settings.wardName!=='string'||s.settings.wardName.length>150))fail();
+ for(const k of ['useStroke','useSenior','useNovice'])if(s.settings[k]!==undefined&&typeof s.settings[k]!=='boolean')fail();
+ for(const n of s.nurses)for(const k of ['senior','novice'])if(n[k]!==undefined&&typeof n[k]!=='boolean')fail();
+ for(const c of ['ช','บ','ด'])if(!Number.isInteger(C.seniorNeed(s.settings)[c])||C.seniorNeed(s.settings)[c]<0||C.seniorNeed(s.settings)[c]>C.demand(s.settings)[c]||!Number.isInteger(C.noviceNeed(s.settings)[c])||C.noviceNeed(s.settings)[c]<0||C.noviceNeed(s.settings)[c]>100)fail();
+ for(const h of s.holidays)if(!/^202[67]-\d{2}-\d{2}$/.test(h.date)||typeof h.name!=='string'||typeof h.enabled!=='boolean')fail();
+ if(!s.overrides||typeof s.overrides!=='object')fail();for(const [k,v]of Object.entries(s.overrides))if(!/^202[67]-\d{2}-\d{2}$/.test(k)||typeof v!=='boolean')fail();
+ for(const r of s.requests)if(!ids.has(r.id)||!['VA','OFF'].includes(r.type)||!['approved','pending','rejected'].includes(r.status)||!/^202[67]-\d{2}-\d{2}$/.test(r.start)||!/^202[67]-\d{2}-\d{2}$/.test(r.end)||r.end<r.start||!/^\d{4}-\d{2}-\d{2}$/.test(r.requested)||(r.requested>=r.start&&!(r.source==='table'&&r.approvedBy==='C7'&&r.status==='approved'))||typeof r.note!=='string'||typeof r.uid!=='string')fail();
+ for(const [k,p]of Object.entries(s.plans)){if(!/^[12]_202[67]-(0[1-9]|1[0-2])$/.test(k)||!Array.isArray(p.ids)||p.ids.some(id=>!ids.has(id))||new Set(p.ids).size!==p.ids.length||!p.rows||!p.locks||!p.notes||!p.colors||!p.prior||!p.tail||typeof p.monthlyNote!=='string')fail();if(p.priorExtra!==undefined){if(!p.priorExtra||typeof p.priorExtra!=='object'||Array.isArray(p.priorExtra))fail();for(const [id,c]of Object.entries(p.priorExtra))if(!ids.has(id)||(c!==null&&!C.CODES.includes(c)))fail();}if(p.priorLast!==undefined){if(!p.priorLast||typeof p.priorLast!=='object'||Array.isArray(p.priorLast))fail();for(const [id,code]of Object.entries(p.priorLast))if(!ids.has(id)||(code!==null&&!C.CODES.includes(code)))fail();}const [y,m]=k.slice(2).split('-').map(Number),D=C.days(y,m);for(const [id,row]of Object.entries(p.rows))if(!ids.has(id)||!Array.isArray(row)||row.length!==D||row.some(c=>!['',...C.CODES].includes(c)))fail();for(const map of [p.colors,p.notes,p.locks])for(const [id,entries]of Object.entries(map)){if(!ids.has(id)||!entries||typeof entries!=='object')fail();for(const [d,val]of Object.entries(entries)){if(!/^\d+$/.test(d)||+d>=D||typeof val!=='string')fail();if(map===p.colors&&val!==''&&!/^#[\da-f]{6}$/i.test(val))fail();if(map===p.locks&&!C.CODES.includes(val))fail();}}for(const map of [p.prior,p.tail])for(const [id,row]of Object.entries(map))if(!ids.has(id)||!Array.isArray(row)||row.length>6||row.some(c=>c!==null&&!C.CODES.includes(c)))fail();}
+}
+
+$('priorExtraTable').onchange=e=>{const id=e.target.dataset.priorExtra;if(!id)return;snapshot();(plan().priorExtra??={})[id]=e.target.value==='?'?null:e.target.value;changed();};
+$('nightMode').onchange=updateNightHint;
+$('mentorMode').onchange=mentorVisibility;
+for(const k of ['Stroke','Senior','Competent','Novice'])$('use'+k).onchange=featureVisibility;
+$('staffingForm').onsubmit=e=>{e.preventDefault();if(worker)return toast('หยุดค้นหาก่อนเปลี่ยนกำลังคน');if(!$('staffingForm').reportValidity())return;const desiredNight=$('nightMode').value;if(desiredNight!==C.nightMode(state.settings)&&Object.values(state.plans).some(p=>Object.values(p.rows).some(r=>r.some(Boolean)))&&!confirm('เปลี่ยนรูปแบบเวรดึกทุกเดือนเป็น '+(desiredNight==='front'?'โย้หน้า':'โย้หลัง')+'? ระบบจะตีความวันที่ใหม่โดยไม่ย้ายช่องเวรเดิม และตรวจข้อผิดเงื่อนไขใหม่ กรุณาตรวจตารางและข้อมูลรอยต่อก่อนใช้งาน'))return;const demand={},skill={},seniorNeed={},competentNeed={},noviceNeed={};for(const c of ['ช','บ','ด']){demand[c]=Number($('need'+c).value);skill[c]=Number($('skill'+c).value);seniorNeed[c]=Number($('senior'+c).value);competentNeed[c]=Number($('competent'+c).value);noviceNeed[c]=Number($('novice'+c).value);if(($('useStroke').checked&&skill[c]>demand[c])||($('useSenior').checked&&seniorNeed[c]>demand[c]))return toast('ขั้นต่ำ Stroke / Senior ต้องไม่เกินกำลังหลัก');}snapshot();Object.assign(state.settings,{nightMode:desiredNight,useRolling:$('useRolling').checked,wardName:$('wardName').value.trim()||'วอร์ด',demand,skill,seniorNeed,competentNeed,noviceNeed,useStroke:$('useStroke').checked,useSenior:$('useSenior').checked,useCompetent:$('useCompetent').checked,useNovice:$('useNovice').checked,mentorMode:$('mentorMode').value,mentorCapacity:$('mentorMode').value==='none'?(state.settings.mentorCapacity||1):Number($('mentorCapacity').value)});changed();toast('บันทึกแล้ว — ตรวจความพร้อมและสร้างตารางจากเงื่อนไขใหม่');};
+$('personLevel').onchange=()=>{const novice=$('personLevel').value==='novice';$('personMentor').disabled=novice;if(novice)$('personMentor').checked=false;};
+$('boundaryShift').onchange=updateBoundaryHint;
+for(const id of ['closeBoundary','cancelBoundary'])$(id).onclick=()=>$('boundaryDialog').close();
+$('boundaryDialog').addEventListener('close',()=>{boundaryEdit=null;});
+$('saveBoundary').onclick=()=>applyBoundary(false);
+$('generateBoundary').onclick=()=>applyBoundary(true);
+$('boundaryHistory').onclick=()=>{
+ const id=boundaryEdit?.id;$('boundaryDialog').close();goTab('settings');
+ const field=document.querySelector(`[data-boundary="prior:${id}:5"]`);field?.scrollIntoView({block:'center'});field?.focus();
+};
+
+// Events use textContent or escaped values for all user text.
+$('month').innerHTML=MONTHS.map((m,i)=>`<option value="${i+1}">${m}</option>`).join('');
+for(const id of ['month','year'])$(id).addEventListener('change',()=>{if(worker){toast('หยุดการค้นหาก่อนเปลี่ยนเดือน');render();return;}state.selected=$('year').value+'-'+String($('month').value).padStart(2,'0');undo=[];changed();});
+window.addEventListener('hashchange',()=>{if(worker){worker.terminate();worker=null;$('progressBox').classList.add('hidden');$('cancelBtn').classList.add('hidden');$('generateBtn').disabled=false;}version=location.hash==='#v2'?2:1;undo=[];goTab('roster');render();});
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>goTab(b.dataset.tab));$('settingsQuick').onclick=()=>goTab('settings');$('saveBtn').onclick=()=>save(true);$('backupBtn').onclick=backup;$('clearBtn').onclick=clearRoster;$('excelBtn').onclick=()=>requestExport('xlsx');$('csvBtn').onclick=()=>requestExport('csv');$('pdfBtn').onclick=()=>requestExport('pdf');$('printBtn').onclick=()=>requestExport('print');$('generateBtn').onclick=startGeneration;
+$('cancelBtn').onclick=()=>{if(worker)worker.terminate();worker=null;$('generateBtn').disabled=false;$('cancelBtn').classList.add('hidden');$('progressBox').classList.add('hidden');toast('หยุดค้นหาแล้ว ตารางเดิมยังอยู่');};
+$('undoBtn').onclick=()=>{if(!undo.length)return;state=undo.pop();changed();toast('ย้อนกลับแล้ว');};$('monthlyNote').onchange=()=>{snapshot();plan().monthlyNote=$('monthlyNote').value;save();renderRemarks();};
+$('rosterWrap').onclick=e=>{const priorButton=e.target.closest('[data-prior-person]');if(priorButton){openBoundary(priorButton.dataset.priorPerson);return;}const b=e.target.closest('[data-cell]');if(b){const [id,d]=b.dataset.cell.split(':');openCell(id,+d);}};
+$('shiftChoices').onclick=e=>{const b=e.target.closest('[data-code]');if(b){edit.code=b.dataset.code;renderCellChoices();}};$('cellColors').onclick=e=>{const b=e.target.closest('[data-color]');if(b){edit.color=b.dataset.color;renderCellChoices();}};
+for(const id of ['closeCell','cancelCell'])$(id).onclick=()=>$('cellDialog').close();$('applyCell').onclick=applyCellEdit;
+$('peopleList').onchange=e=>{const t=e.target;if(worker){toast('หยุดค้นหาก่อนแก้ข้อมูลบุคลากร');renderPeople();return;}const id=t.dataset.level||t.dataset.mentorFor||t.dataset.person||t.dataset.active,n=state.nurses.find(n=>n.id===id);if(!n)return;snapshot();if(t.dataset.level){n.level=t.value;delete n.senior;delete n.novice;if(n.level==='novice')n.mentor=false;if(n.level!=='novice')n.mentorId='';}else if(t.dataset.mentorFor!==undefined)n.mentorId=t.value;else if(t.dataset.role)n[t.dataset.role]=t.checked;else if(t.dataset.active){const p=plan();p.ids=t.checked?[...new Set([...p.ids,id])]:p.ids.filter(x=>x!==id);}changed();};
+$('peopleList').onclick=e=>{const del=e.target.closest('[data-delete-person]');if(del){if(worker)return toast('หยุดค้นหาก่อนลบบุคลากร');const id=del.dataset.deletePerson,n=state.nurses.find(n=>n.id===id);if(!confirm('ลบ '+n.name+' พร้อมเวร วันลา และหมายเหตุของบุคคลนี้ทุกเดือน? สามารถกดย้อนกลับได้'))return;snapshot();state.nurses=state.nurses.filter(n=>n.id!==id);state.requests=state.requests.filter(r=>r.id!==id);for(const p of Object.values(state.plans)){p.ids=p.ids.filter(x=>x!==id);for(const key of ['rows','colors','notes','locks','prior','tail','priorLast','priorExtra'])if(p[key])delete p[key][id];}changed();toast('ลบบุคลากรแล้ว สามารถย้อนกลับได้');return;}const b=e.target.closest('[data-rename]');if(!b)return;const n=state.nurses.find(n=>n.id===b.dataset.rename),name=prompt('ชื่อ–นามสกุล',n.name);if(name?.trim()&&name.trim().length<=150){if(state.nurses.some(x=>x.id!==n.id&&x.name===name.trim()))return toast('มีชื่อนี้แล้ว');snapshot();n.name=name.trim();changed();}};
+$('personForm').onsubmit=e=>{e.preventDefault();const name=$('personName').value.trim();if(!name)return;if(state.nurses.some(n=>n.name===name))return toast('มีชื่อนี้อยู่แล้ว');snapshot();const n={id:'rn_'+Date.now().toString(36),name,stroke:$('personStroke').checked,level:$('personLevel').value,mentor:$('personLevel').value!=='novice'&&$('personMentor').checked,mentorId:'',active:true};state.nurses.push(n);plan().ids.push(n.id);$('personForm').reset();$('personMentor').disabled=false;changed();toast('เพิ่ม RN แล้ว');};
+function overlapping(r,exclude){return state.requests.some(x=>x.uid!==exclude&&x.id===r.id&&x.status!=='rejected'&&r.status!=='rejected'&&x.start<=r.end&&x.end>=r.start);}
+$('leaveForm').onsubmit=e=>{e.preventDefault();const r={uid:'req_'+Date.now().toString(36),id:$('leavePerson').value,type:$('leaveType').value,status:isAdmin()?$('leaveStatus').value:'pending',start:$('leaveStart').value,end:$('leaveEnd').value,requested:$('leaveRequested').value,note:$('leaveNote').value.trim()};if(r.start>r.end)return toast('วันสิ้นสุดต้องไม่ก่อนวันเริ่ม');if(r.requested>=r.start)return toast('ต้องยื่นคำขอก่อนวันหยุดอย่างน้อย 1 วัน');if(r.requested>today())return toast('วันที่ยื่นคำขอต้องไม่เป็นวันในอนาคต');if(!/^202[67]-/.test(r.start)||!/^202[67]-/.test(r.end))return toast('รองรับวันหยุดในปี 2569–2570');if(overlapping(r))return toast('ช่วงวันที่ซ้ำกับคำขอเดิม กรุณาแก้หรือลบรายการเดิมก่อน');snapshot();state.requests.push(r);$('leaveNote').value='';changed();toast('บันทึกคำขอแล้ว — ตารางเดิมจะถูกตรวจใหม่');};
+$('leaveList').onchange=e=>{if(!requireAdmin()){renderLeave();return;}const uid=e.target.dataset.request;if(!uid)return;const r=state.requests.find(r=>r.uid===uid),newStatus=e.target.value;if(overlapping({...r,status:newStatus},uid)){toast('ช่วงวันซ้ำกับคำขออื่น');renderLeave();return;}snapshot();r.status=newStatus;changed();};
+$('leaveList').onclick=e=>{const b=e.target.closest('[data-delete-request]');if(b&&!isAdmin()&&state.requests.find(r=>r.uid===b.dataset.deleteRequest)?.status!=='pending')return toast('บัญชี C7 เท่านั้นที่ลบคำขออนุมัติได้');if(!b||!confirm('ลบคำขอนี้? สามารถย้อนกลับได้'))return;snapshot();state.requests=state.requests.filter(r=>r.uid!==b.dataset.deleteRequest);changed();};
+$('calMonth').onclick=e=>{const b=e.target.closest('[data-calendar]');if(!b)return;snapshot();const date=b.dataset.calendar;state.overrides[date]=!cal().rows.find(d=>d.date===date).work;changed();};
+$('resetCalendar').onclick=()=>{snapshot();for(const k of Object.keys(state.overrides))if(k.startsWith(state.selected))delete state.overrides[k];changed();};
+$('holidayList').onchange=e=>{if(e.target.dataset.holiday===undefined)return;snapshot();state.holidays[+e.target.dataset.holiday].enabled=e.target.checked;changed();};
+$('holidayForm').onsubmit=e=>{e.preventDefault();const date=$('holidayDate').value,name=$('holidayName').value.trim();if(!/^202[67]-/.test(date))return toast('รองรับปี 2569–2570');if(state.holidays.some(h=>h.date===date&&h.name===name))return toast('มีวันหยุดนี้แล้ว');snapshot();state.holidays.push({date,name,enabled:true,status:'เพิ่มโดยผู้ใช้'});state.holidays.sort((a,b)=>a.date.localeCompare(b.date));$('holidayForm').reset();changed();};
+for(const [id,field]of [['minimum','minimum'],['blockLength','blockLength'],['searchBudget','budget'],['otRate','rate'],['vaCredit','vaCredit']])$(id).onchange=()=>{const el=$(id);if(id==='otRate'&&!el.checkValidity())return;snapshot();state.settings[field]=id==='vaCredit'?el.checked:id==='minimum'?el.value:id==='otRate'&&el.value===''?null:Number(el.value);changed();};
+for(const id of ['historyTable','tailTable'])$(id).onchange=e=>{const b=e.target.dataset.boundary;if(!b)return;snapshot();const [side,n,i]=b.split(':'),p=plan(),value=e.target.value==='?'?null:e.target.value;if(side==='prior'&&+i===5)(p.priorLast??={})[n]=value;else{if(!p[side][n])p[side][n]=boundary(side,false)[n].slice();p[side][n][+i]=value;}changed();};
+$('copyOther').onclick=()=>{if(!requireAdmin())return;const other=state.plans[planKey(version===1?2:1)];if(!other)return toast('ยังไม่มีตารางอีกเวอร์ชันในเดือนนี้');if(!confirm('คัดลอกตารางจากอีกเวอร์ชันมาแทนเดือนนี้?'))return;snapshot();state.plans[planKey()]=clone(other);changed();toast('คัดลอกแล้ว');};
+$('issuesList').onclick=e=>{const b=e.target.closest('[data-issue]');if(!b)return;const issue=lastValidation.issues[+b.dataset.issue];goTab('roster');const d=issue.days.find(d=>d>=0&&d<cal().rows.length);if(issue.id&&d!==undefined){const el=document.querySelector(`[data-cell="${issue.id}:${d}"]`);el?.scrollIntoView({block:'center',inline:'center'});el?.focus();}else toast(issue.message);};
+$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=async e=>{if(!requireAdmin())return;const file=e.target.files[0];if(!file)return;try{if(file.size>8e6)throw Error('ไฟล์ใหญ่เกิน 8 MB');const parsed=JSON.parse(await file.text());validateBackup(parsed);if(!confirm('กู้คืนไฟล์นี้แทนข้อมูลปัจจุบันทั้งหมด? ระบบจะดาวน์โหลดสำเนาปัจจุบันก่อน และย้อนกลับได้'))return;backup();snapshot();state=parsed;changed();toast('กู้คืนข้อมูลแล้ว');}catch(err){toast('นำเข้าไม่ได้: '+err.message);}finally{e.target.value='';}};
+window.addEventListener('storage',e=>{if(e.key===KEY)message('ข้อมูลถูกเปลี่ยนจากอีกหน้าต่าง กรุณาสำรองข้อมูลปัจจุบัน แล้วเปิดใหม่เพื่อใช้ข้อมูลล่าสุด','warn');});
+$('accountBtn').onclick=()=>{if(isAdmin())enterAccount('guest');else $('loginDialog').showModal();};
+$('guestBtn').onclick=()=>enterAccount('guest');
+$('loginDialog').addEventListener('cancel',e=>{e.preventDefault();enterAccount('guest');});
+$('loginForm').onsubmit=e=>{e.preventDefault();if($('loginUsername').value.trim()==='C7'&&$('loginPassword').value==='admin1234')enterAccount('admin');else{$('loginError').textContent='Username หรือ Password ไม่ถูกต้อง';$('loginPassword').value='';}};
+$('clearAllBtn').onclick=()=>{if(worker)return toast('กรุณาหยุดค้นหาก่อนล้างตาราง');$('clearAllPassword').value='';$('clearAllError').textContent='';$('clearAllDialog').showModal();};
+$('cancelClearAll').onclick=()=>$('clearAllDialog').close();
+$('clearAllForm').onsubmit=e=>{e.preventDefault();if(worker)return toast('กรุณาหยุดค้นหาก่อนล้างตาราง');if($('clearAllPassword').value!=='admin1234'){$('clearAllError').textContent='รหัสไม่ถูกต้อง ยังไม่มีการลบข้อมูล';$('clearAllPassword').value='';return;}snapshot();state.plans={};state.requests=[];$('clearAllPassword').value='';$('clearAllDialog').close();changed();toast('ล้างตารางทุกเดือนและคำขอทั้งหมดแล้ว');};
+$('mockDownloadBtn').onclick=()=>{try{const item=readMock();download(exportBase()+'_mock_data.json',JSON.stringify(item.data,null,2),'application/json');toast('ดาวน์โหลด mock data ที่บันทึก '+new Date(item.savedAt).toLocaleString('th-TH'));}catch(e){toast(e.message);}};
+$('mockRestoreBtn').onclick=()=>{if(!requireAdmin())return;if(worker)return toast('กรุณาหยุดค้นหาก่อนโหลด mock data');try{const item=readMock();if(!confirm('โหลด mock data ที่บันทึก '+new Date(item.savedAt).toLocaleString('th-TH')+' แทนข้อมูลปัจจุบัน? สามารถย้อนกลับได้'))return;snapshot();state=clone(item.data);changed();toast('โหลด mock data แล้ว');}catch(e){toast(e.message);}};
+$('leaveRequested').value=today();$('leaveStart').value=state.selected+'-01';$('leaveEnd').value=state.selected+'-01';
+render();$('loginDialog').showModal();if(loadError)message(loadError+' ข้อมูลเดิมยังไม่ถูกเขียนทับ กรุณากู้คืนไฟล์สำรอง','warn');
+</script></body></html>
